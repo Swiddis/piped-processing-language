@@ -16,15 +16,15 @@ class RequestPool:
     """
 
     def __init__(self, capacity: int = 32):
-        self.queue = asyncio.Queue(maxsize=capacity)
+        self.sem = asyncio.Semaphore(capacity)
 
     @asynccontextmanager
     async def acquire(self):
-        await self.queue.put(None)
+        await self.sem.acquire()
         try:
             yield
         finally:
-            await self.queue.get()
+            await self.sem.release()
 
 
 class OpenSearchAdaptor(QueryableAdaptor):
