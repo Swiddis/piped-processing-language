@@ -7,3 +7,5 @@
   adaptor implementation.
 - **data_generation** contains everything related to data generation, particularly `OpenSearchIndex`
   and `generate_index()`.
+
+![Architecture Image](docs/media/architecture.png)
