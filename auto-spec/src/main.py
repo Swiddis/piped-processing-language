@@ -48,7 +48,7 @@ async def main():
     os_adaptor = opensearch()
     try:
         futures = [
-            asyncio.create_task(do_test_capturing_result(os_adaptor)) for _ in range(100)
+            asyncio.create_task(do_test_capturing_result(os_adaptor)) for _ in range(2000)
         ]
         total = 0
         for future in tqdm.tqdm(asyncio.as_completed(futures), total=len(futures)):
