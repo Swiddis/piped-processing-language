@@ -2,6 +2,7 @@ from abc import ABC, abstractmethod
 from data_generation.index import OpenSearchIndex
 import typing
 
+
 class QueryableAdaptor(ABC):
     """
     Used to support testing queries on multiple runtimes
