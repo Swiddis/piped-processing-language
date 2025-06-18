@@ -18,7 +18,7 @@ def load_function_registry(registry):
                 curr_fun_data['str'] = fun_alias
             for match in re.findall(r"\[[\w,]+\]", line):
                 types = match.strip('[]')
-                curr_fun_data['signatures'].append(types.split(','))
+                curr_fun_data['signatures'].append(types.lower().split(','))
         else:
             if curr_fun is None:
                 pass

@@ -1,9 +1,14 @@
 # Enable type checking
 from beartype.claw import beartype_package
 
+from data_generation.data import OPENSEARCH_DATA_TYPES
+from data_generation.index import generate_index
+
 beartype_package("src")
 
 import asyncio
+import json
+import sys
 import typing
 
 import tqdm
@@ -49,7 +54,7 @@ async def do_test_capturing_result(client: AsyncOpenSearch):
         return False
 
 
-async def main():
+async def main_run_tests():
     os_adaptor = opensearch()
     try:
         futures = [
@@ -64,5 +69,45 @@ async def main():
         await os_adaptor.close()
 
 
+# TODO modularize
+def build_case_from(function, signature, sig_idx):
+    if not all(s in OPENSEARCH_DATA_TYPES for s in signature):
+        return
+    index = generate_index(column_types=signature)
+    case = {
+        "data": {
+            "mapping": {col.name: col.dtype for col in index.columns},
+            "documents": index.documents,
+        },
+        "query": {
+            "language": "ppl",
+            "query": f"source = $INDEX | eval result = {function['str']}({', '.join(col.name for col in index.columns)}) | fields result",
+        },
+    }
+
+    as_toml_table = lambda o: json.dumps(o, separators=(', ', ' = '))
+    with open(f'src/query_cases/cases/{function['name']}_{sig_idx}.toml', 'w') as fp:
+        fp.write("[data]\n")
+        fp.write(f"mapping = {as_toml_table(case['data']['mapping'])}\n")
+        fp.write(f"documents = [\n")
+        for doc in case['data']['documents']:
+            fp.write('\t' + as_toml_table(doc) + ',\n')
+        fp.write(f']\n\n[query]\nlanguage = "ppl"\nquery = {repr(case['query']['query'])}\n')
+
+
+def main_generate_tests():
+    with open("data/function_signatures.json", "r") as fp:
+        functions = json.load(fp)
+    for function in functions:
+        for i, signature in enumerate(function["signatures"]):
+            build_case_from(function, signature, i)
+
+
 if __name__ == "__main__":
-    asyncio.run(main())
+    if len(sys.argv) != 2:
+        print("Usage: main.py [test|generate]")
+        sys.exit(1)
+    if sys.argv[1] == "test":
+        asyncio.run(main_run_tests())
+    if sys.argv[1] == "generate":
+        main_generate_tests()

@@ -7,7 +7,7 @@ _fake = faker.Faker()
 
 def gen_column_name():
     # prefix with col_ to avoid accidentally landing on any PPL grammar keywords
-    return "col_" + gen_keyword()
+    return "col_" + gen_keyword().lower()
 
 
 def gen_boolean():

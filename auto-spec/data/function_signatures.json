@@ -4,36 +4,36 @@
     "str": "adddate",
     "signatures": [
       [
-        "DATE",
-        "ANY"
+        "date",
+        "any"
       ],
       [
-        "TIME",
-        "ANY"
+        "time",
+        "any"
       ],
       [
-        "TIMESTAMP",
-        "ANY"
+        "timestamp",
+        "any"
       ],
       [
-        "DATE",
-        "INTEGER"
+        "date",
+        "integer"
       ],
       [
-        "TIME",
-        "INTEGER"
+        "time",
+        "integer"
       ],
       [
-        "TIMESTAMP",
-        "INTEGER"
+        "timestamp",
+        "integer"
       ],
       [
-        "STRING",
-        "ANY"
+        "string",
+        "any"
       ],
       [
-        "STRING",
-        "INTEGER"
+        "string",
+        "integer"
       ]
     ]
   },
@@ -42,16 +42,16 @@
     "str": "dayofyear",
     "signatures": [
       [
-        "DATE"
+        "date"
       ],
       [
-        "TIME"
+        "time"
       ],
       [
-        "TIMESTAMP"
+        "timestamp"
       ],
       [
-        "STRING"
+        "string"
       ]
     ]
   },
@@ -60,13 +60,13 @@
     "str": "minute_of_day",
     "signatures": [
       [
-        "STRING"
+        "string"
       ],
       [
-        "TIME"
+        "time"
       ],
       [
-        "TIMESTAMP"
+        "timestamp"
       ]
     ]
   },
@@ -75,8 +75,8 @@
     "str": "latest",
     "signatures": [
       [
-        "STRING",
-        "TIMESTAMP"
+        "string",
+        "timestamp"
       ]
     ]
   },
@@ -85,20 +85,20 @@
     "str": "%",
     "signatures": [
       [
-        "INTEGER",
-        "INTEGER"
+        "integer",
+        "integer"
       ],
       [
-        "INTEGER",
-        "DOUBLE"
+        "integer",
+        "double"
       ],
       [
-        "DOUBLE",
-        "INTEGER"
+        "double",
+        "integer"
       ],
       [
-        "DOUBLE",
-        "DOUBLE"
+        "double",
+        "double"
       ]
     ]
   },
@@ -107,68 +107,68 @@
     "str": "subtime",
     "signatures": [
       [
-        "STRING",
-        "STRING"
+        "string",
+        "string"
       ],
       [
-        "DATE",
-        "DATE"
+        "date",
+        "date"
       ],
       [
-        "DATE",
-        "TIME"
+        "date",
+        "time"
       ],
       [
-        "DATE",
-        "TIMESTAMP"
+        "date",
+        "timestamp"
       ],
       [
-        "TIME",
-        "DATE"
+        "time",
+        "date"
       ],
       [
-        "TIME",
-        "TIME"
+        "time",
+        "time"
       ],
       [
-        "TIME",
-        "TIMESTAMP"
+        "time",
+        "timestamp"
       ],
       [
-        "TIMESTAMP",
-        "DATE"
+        "timestamp",
+        "date"
       ],
       [
-        "TIMESTAMP",
-        "TIME"
+        "timestamp",
+        "time"
       ],
       [
-        "TIMESTAMP",
-        "TIMESTAMP"
+        "timestamp",
+        "timestamp"
       ],
       [
-        "DATE",
-        "STRING"
+        "date",
+        "string"
       ],
       [
-        "TIME",
-        "STRING"
+        "time",
+        "string"
       ],
       [
-        "TIMESTAMP",
-        "STRING"
+        "timestamp",
+        "string"
       ],
       [
-        "STRING",
-        "DATE"
+        "string",
+        "date"
       ],
       [
-        "STRING",
-        "TIME"
+        "string",
+        "time"
       ],
       [
-        "STRING",
-        "TIMESTAMP"
+        "string",
+        "timestamp"
       ]
     ]
   },
@@ -177,16 +177,16 @@
     "str": "hour",
     "signatures": [
       [
-        "DATE"
+        "date"
       ],
       [
-        "TIME"
+        "time"
       ],
       [
-        "TIMESTAMP"
+        "timestamp"
       ],
       [
-        "STRING"
+        "string"
       ]
     ]
   },
@@ -195,7 +195,7 @@
     "str": "isblank",
     "signatures": [
       [
-        "ANY"
+        "any"
       ]
     ]
   },
@@ -204,10 +204,10 @@
     "str": "sec_to_time",
     "signatures": [
       [
-        "INTEGER"
+        "integer"
       ],
       [
-        "DOUBLE"
+        "double"
       ]
     ]
   },
@@ -216,32 +216,32 @@
     "str": "yearweek",
     "signatures": [
       [
-        "DATE"
+        "date"
       ],
       [
-        "TIME"
+        "time"
       ],
       [
-        "TIMESTAMP"
+        "timestamp"
       ],
       [
-        "STRING"
+        "string"
       ],
       [
-        "STRING",
-        "INTEGER"
+        "string",
+        "integer"
       ],
       [
-        "DATE",
-        "INTEGER"
+        "date",
+        "integer"
       ],
       [
-        "TIME",
-        "INTEGER"
+        "time",
+        "integer"
       ],
       [
-        "TIMESTAMP",
-        "INTEGER"
+        "timestamp",
+        "integer"
       ]
     ]
   },
@@ -250,13 +250,13 @@
     "str": "abs",
     "signatures": [
       [
-        "INTEGER"
+        "integer"
       ],
       [
-        "DOUBLE"
+        "double"
       ],
       [
-        "ANY"
+        "any"
       ]
     ]
   },
@@ -265,24 +265,24 @@
     "str": "timestampadd",
     "signatures": [
       [
-        "STRING",
-        "INTEGER",
-        "STRING"
+        "string",
+        "integer",
+        "string"
       ],
       [
-        "STRING",
-        "INTEGER",
-        "DATE"
+        "string",
+        "integer",
+        "date"
       ],
       [
-        "STRING",
-        "INTEGER",
-        "TIME"
+        "string",
+        "integer",
+        "time"
       ],
       [
-        "STRING",
-        "INTEGER",
-        "TIMESTAMP"
+        "string",
+        "integer",
+        "timestamp"
       ]
     ]
   },
@@ -291,10 +291,10 @@
     "str": "cos",
     "signatures": [
       [
-        "INTEGER"
+        "integer"
       ],
       [
-        "DOUBLE"
+        "double"
       ]
     ]
   },
@@ -303,16 +303,16 @@
     "str": "time",
     "signatures": [
       [
-        "DATE"
+        "date"
       ],
       [
-        "TIME"
+        "time"
       ],
       [
-        "TIMESTAMP"
+        "timestamp"
       ],
       [
-        "STRING"
+        "string"
       ]
     ]
   },
@@ -321,7 +321,7 @@
     "str": "trim",
     "signatures": [
       [
-        "STRING"
+        "string"
       ]
     ]
   },
@@ -330,16 +330,16 @@
     "str": "minute",
     "signatures": [
       [
-        "DATE"
+        "date"
       ],
       [
-        "TIME"
+        "time"
       ],
       [
-        "TIMESTAMP"
+        "timestamp"
       ],
       [
-        "STRING"
+        "string"
       ]
     ]
   },
@@ -348,20 +348,20 @@
     "str": "pow",
     "signatures": [
       [
-        "INTEGER",
-        "INTEGER"
+        "integer",
+        "integer"
       ],
       [
-        "INTEGER",
-        "DOUBLE"
+        "integer",
+        "double"
       ],
       [
-        "DOUBLE",
-        "INTEGER"
+        "double",
+        "integer"
       ],
       [
-        "DOUBLE",
-        "DOUBLE"
+        "double",
+        "double"
       ]
     ]
   },
@@ -370,68 +370,68 @@
     "str": "addtime",
     "signatures": [
       [
-        "STRING",
-        "STRING"
+        "string",
+        "string"
       ],
       [
-        "DATE",
-        "DATE"
+        "date",
+        "date"
       ],
       [
-        "DATE",
-        "TIME"
+        "date",
+        "time"
       ],
       [
-        "DATE",
-        "TIMESTAMP"
+        "date",
+        "timestamp"
       ],
       [
-        "TIME",
-        "DATE"
+        "time",
+        "date"
       ],
       [
-        "TIME",
-        "TIME"
+        "time",
+        "time"
       ],
       [
-        "TIME",
-        "TIMESTAMP"
+        "time",
+        "timestamp"
       ],
       [
-        "TIMESTAMP",
-        "DATE"
+        "timestamp",
+        "date"
       ],
       [
-        "TIMESTAMP",
-        "TIME"
+        "timestamp",
+        "time"
       ],
       [
-        "TIMESTAMP",
-        "TIMESTAMP"
+        "timestamp",
+        "timestamp"
       ],
       [
-        "DATE",
-        "STRING"
+        "date",
+        "string"
       ],
       [
-        "TIME",
-        "STRING"
+        "time",
+        "string"
       ],
       [
-        "TIMESTAMP",
-        "STRING"
+        "timestamp",
+        "string"
       ],
       [
-        "STRING",
-        "DATE"
+        "string",
+        "date"
       ],
       [
-        "STRING",
-        "TIME"
+        "string",
+        "time"
       ],
       [
-        "STRING",
-        "TIMESTAMP"
+        "string",
+        "timestamp"
       ]
     ]
   },
@@ -440,10 +440,10 @@
     "str": "cbrt",
     "signatures": [
       [
-        "INTEGER"
+        "integer"
       ],
       [
-        "DOUBLE"
+        "double"
       ]
     ]
   },
@@ -452,7 +452,7 @@
     "str": "upper",
     "signatures": [
       [
-        "STRING"
+        "string"
       ]
     ]
   },
@@ -461,7 +461,7 @@
     "str": "from_days",
     "signatures": [
       [
-        "INTEGER"
+        "integer"
       ]
     ]
   },
@@ -470,8 +470,8 @@
     "str": "sha2",
     "signatures": [
       [
-        "STRING",
-        "INTEGER"
+        "string",
+        "integer"
       ]
     ]
   },
@@ -480,16 +480,16 @@
     "str": "pattern_parser",
     "signatures": [
       [
-        "STRING",
-        "ANY"
+        "string",
+        "any"
       ],
       [
-        "STRING",
-        "STRING"
+        "string",
+        "string"
       ],
       [
-        "STRING",
-        "ARRAY"
+        "string",
+        "array"
       ]
     ]
   },
@@ -498,28 +498,28 @@
     "str": "weekday",
     "signatures": [
       [
-        "DATE"
+        "date"
       ],
       [
-        "TIME"
+        "time"
       ],
       [
-        "TIMESTAMP"
+        "timestamp"
       ],
       [
-        "STRING"
+        "string"
       ],
       [
-        "DATE",
-        "INTEGER"
+        "date",
+        "integer"
       ],
       [
-        "TIME",
-        "INTEGER"
+        "time",
+        "integer"
       ],
       [
-        "TIMESTAMP",
-        "INTEGER"
+        "timestamp",
+        "integer"
       ]
     ]
   },
@@ -528,20 +528,20 @@
     "str": "date_sub",
     "signatures": [
       [
-        "DATE",
-        "ANY"
+        "date",
+        "any"
       ],
       [
-        "TIME",
-        "ANY"
+        "time",
+        "any"
       ],
       [
-        "TIMESTAMP",
-        "ANY"
+        "timestamp",
+        "any"
       ],
       [
-        "STRING",
-        "ANY"
+        "string",
+        "any"
       ]
     ]
   },
@@ -550,26 +550,26 @@
     "str": "log",
     "signatures": [
       [
-        "INTEGER",
-        "INTEGER"
+        "integer",
+        "integer"
       ],
       [
-        "INTEGER",
-        "DOUBLE"
+        "integer",
+        "double"
       ],
       [
-        "DOUBLE",
-        "INTEGER"
+        "double",
+        "integer"
       ],
       [
-        "DOUBLE",
-        "DOUBLE"
+        "double",
+        "double"
       ],
       [
-        "INTEGER"
+        "integer"
       ],
       [
-        "DOUBLE"
+        "double"
       ]
     ]
   },
@@ -578,68 +578,68 @@
     "str": "timediff",
     "signatures": [
       [
-        "STRING",
-        "STRING"
+        "string",
+        "string"
       ],
       [
-        "DATE",
-        "DATE"
+        "date",
+        "date"
       ],
       [
-        "DATE",
-        "TIME"
+        "date",
+        "time"
       ],
       [
-        "DATE",
-        "TIMESTAMP"
+        "date",
+        "timestamp"
       ],
       [
-        "TIME",
-        "DATE"
+        "time",
+        "date"
       ],
       [
-        "TIME",
-        "TIME"
+        "time",
+        "time"
       ],
       [
-        "TIME",
-        "TIMESTAMP"
+        "time",
+        "timestamp"
       ],
       [
-        "TIMESTAMP",
-        "DATE"
+        "timestamp",
+        "date"
       ],
       [
-        "TIMESTAMP",
-        "TIME"
+        "timestamp",
+        "time"
       ],
       [
-        "TIMESTAMP",
-        "TIMESTAMP"
+        "timestamp",
+        "timestamp"
       ],
       [
-        "DATE",
-        "STRING"
+        "date",
+        "string"
       ],
       [
-        "TIME",
-        "STRING"
+        "time",
+        "string"
       ],
       [
-        "TIMESTAMP",
-        "STRING"
+        "timestamp",
+        "string"
       ],
       [
-        "STRING",
-        "DATE"
+        "string",
+        "date"
       ],
       [
-        "STRING",
-        "TIME"
+        "string",
+        "time"
       ],
       [
-        "STRING",
-        "TIMESTAMP"
+        "string",
+        "timestamp"
       ]
     ]
   },
@@ -648,16 +648,16 @@
     "str": "day",
     "signatures": [
       [
-        "DATE"
+        "date"
       ],
       [
-        "TIME"
+        "time"
       ],
       [
-        "TIMESTAMP"
+        "timestamp"
       ],
       [
-        "STRING"
+        "string"
       ]
     ]
   },
@@ -666,10 +666,10 @@
     "str": "exp",
     "signatures": [
       [
-        "INTEGER"
+        "integer"
       ],
       [
-        "DOUBLE"
+        "double"
       ]
     ]
   },
@@ -678,44 +678,44 @@
     "str": "maketime",
     "signatures": [
       [
-        "INTEGER",
-        "INTEGER",
-        "INTEGER"
+        "integer",
+        "integer",
+        "integer"
       ],
       [
-        "INTEGER",
-        "INTEGER",
-        "DOUBLE"
+        "integer",
+        "integer",
+        "double"
       ],
       [
-        "INTEGER",
-        "DOUBLE",
-        "INTEGER"
+        "integer",
+        "double",
+        "integer"
       ],
       [
-        "INTEGER",
-        "DOUBLE",
-        "DOUBLE"
+        "integer",
+        "double",
+        "double"
       ],
       [
-        "DOUBLE",
-        "INTEGER",
-        "INTEGER"
+        "double",
+        "integer",
+        "integer"
       ],
       [
-        "DOUBLE",
-        "INTEGER",
-        "DOUBLE"
+        "double",
+        "integer",
+        "double"
       ],
       [
-        "DOUBLE",
-        "DOUBLE",
-        "INTEGER"
+        "double",
+        "double",
+        "integer"
       ],
       [
-        "DOUBLE",
-        "DOUBLE",
-        "DOUBLE"
+        "double",
+        "double",
+        "double"
       ]
     ]
   },
@@ -724,29 +724,29 @@
     "str": "span",
     "signatures": [
       [
-        "STRING",
-        "INTEGER",
-        "STRING"
+        "string",
+        "integer",
+        "string"
       ],
       [
-        "DATE",
-        "INTEGER",
-        "STRING"
+        "date",
+        "integer",
+        "string"
       ],
       [
-        "TIME",
-        "INTEGER",
-        "STRING"
+        "time",
+        "integer",
+        "string"
       ],
       [
-        "TIMESTAMP",
-        "INTEGER",
-        "STRING"
+        "timestamp",
+        "integer",
+        "string"
       ],
       [
-        "INTEGER",
-        "INTEGER",
-        "ANY"
+        "integer",
+        "integer",
+        "any"
       ]
     ]
   },
@@ -755,7 +755,7 @@
     "str": "array_length",
     "signatures": [
       [
-        "ARRAY"
+        "array"
       ]
     ]
   },
@@ -764,36 +764,36 @@
     "str": "*",
     "signatures": [
       [
-        "INTEGER",
-        "INTEGER"
+        "integer",
+        "integer"
       ],
       [
-        "INTEGER",
-        "DOUBLE"
+        "integer",
+        "double"
       ],
       [
-        "DOUBLE",
-        "INTEGER"
+        "double",
+        "integer"
       ],
       [
-        "DOUBLE",
-        "DOUBLE"
+        "double",
+        "double"
       ],
       [
-        "ANY",
-        "INTEGER"
+        "any",
+        "integer"
       ],
       [
-        "ANY",
-        "DOUBLE"
+        "any",
+        "double"
       ],
       [
-        "INTEGER",
-        "ANY"
+        "integer",
+        "any"
       ],
       [
-        "DOUBLE",
-        "ANY"
+        "double",
+        "any"
       ]
     ]
   },
@@ -802,13 +802,13 @@
     "str": "date",
     "signatures": [
       [
-        "DATE"
+        "date"
       ],
       [
-        "TIMESTAMP"
+        "timestamp"
       ],
       [
-        "STRING"
+        "string"
       ]
     ]
   },
@@ -817,7 +817,7 @@
     "str": "ispresent",
     "signatures": [
       [
-        "ANY"
+        "any"
       ]
     ]
   },
@@ -826,20 +826,20 @@
     "str": "modulus",
     "signatures": [
       [
-        "INTEGER",
-        "INTEGER"
+        "integer",
+        "integer"
       ],
       [
-        "INTEGER",
-        "DOUBLE"
+        "integer",
+        "double"
       ],
       [
-        "DOUBLE",
-        "INTEGER"
+        "double",
+        "integer"
       ],
       [
-        "DOUBLE",
-        "DOUBLE"
+        "double",
+        "double"
       ]
     ]
   },
@@ -848,68 +848,68 @@
     "str": "datediff",
     "signatures": [
       [
-        "STRING",
-        "STRING"
+        "string",
+        "string"
       ],
       [
-        "DATE",
-        "DATE"
+        "date",
+        "date"
       ],
       [
-        "DATE",
-        "TIME"
+        "date",
+        "time"
       ],
       [
-        "DATE",
-        "TIMESTAMP"
+        "date",
+        "timestamp"
       ],
       [
-        "TIME",
-        "DATE"
+        "time",
+        "date"
       ],
       [
-        "TIME",
-        "TIME"
+        "time",
+        "time"
       ],
       [
-        "TIME",
-        "TIMESTAMP"
+        "time",
+        "timestamp"
       ],
       [
-        "TIMESTAMP",
-        "DATE"
+        "timestamp",
+        "date"
       ],
       [
-        "TIMESTAMP",
-        "TIME"
+        "timestamp",
+        "time"
       ],
       [
-        "TIMESTAMP",
-        "TIMESTAMP"
+        "timestamp",
+        "timestamp"
       ],
       [
-        "DATE",
-        "STRING"
+        "date",
+        "string"
       ],
       [
-        "TIME",
-        "STRING"
+        "time",
+        "string"
       ],
       [
-        "TIMESTAMP",
-        "STRING"
+        "timestamp",
+        "string"
       ],
       [
-        "STRING",
-        "DATE"
+        "string",
+        "date"
       ],
       [
-        "STRING",
-        "TIME"
+        "string",
+        "time"
       ],
       [
-        "STRING",
-        "TIMESTAMP"
+        "string",
+        "timestamp"
       ]
     ]
   },
@@ -918,80 +918,80 @@
     "str": "timestamp",
     "signatures": [
       [
-        "STRING"
+        "string"
       ],
       [
-        "DATE"
+        "date"
       ],
       [
-        "TIME"
+        "time"
       ],
       [
-        "TIMESTAMP"
+        "timestamp"
       ],
       [
-        "STRING",
-        "STRING"
+        "string",
+        "string"
       ],
       [
-        "DATE",
-        "DATE"
+        "date",
+        "date"
       ],
       [
-        "DATE",
-        "TIME"
+        "date",
+        "time"
       ],
       [
-        "DATE",
-        "TIMESTAMP"
+        "date",
+        "timestamp"
       ],
       [
-        "TIME",
-        "DATE"
+        "time",
+        "date"
       ],
       [
-        "TIME",
-        "TIME"
+        "time",
+        "time"
       ],
       [
-        "TIME",
-        "TIMESTAMP"
+        "time",
+        "timestamp"
       ],
       [
-        "TIMESTAMP",
-        "DATE"
+        "timestamp",
+        "date"
       ],
       [
-        "TIMESTAMP",
-        "TIME"
+        "timestamp",
+        "time"
       ],
       [
-        "TIMESTAMP",
-        "TIMESTAMP"
+        "timestamp",
+        "timestamp"
       ],
       [
-        "STRING",
-        "DATE"
+        "string",
+        "date"
       ],
       [
-        "STRING",
-        "TIME"
+        "string",
+        "time"
       ],
       [
-        "STRING",
-        "TIMESTAMP"
+        "string",
+        "timestamp"
       ],
       [
-        "DATE",
-        "STRING"
+        "date",
+        "string"
       ],
       [
-        "TIME",
-        "STRING"
+        "time",
+        "string"
       ],
       [
-        "TIMESTAMP",
-        "STRING"
+        "timestamp",
+        "string"
       ]
     ]
   },
@@ -1000,7 +1000,7 @@
     "str": "rtrim",
     "signatures": [
       [
-        "STRING"
+        "string"
       ]
     ]
   },
@@ -1009,13 +1009,13 @@
     "str": "substr",
     "signatures": [
       [
-        "STRING",
-        "INTEGER"
+        "string",
+        "integer"
       ],
       [
-        "STRING",
-        "INTEGER",
-        "INTEGER"
+        "string",
+        "integer",
+        "integer"
       ]
     ]
   },
@@ -1024,20 +1024,20 @@
     "str": "power",
     "signatures": [
       [
-        "INTEGER",
-        "INTEGER"
+        "integer",
+        "integer"
       ],
       [
-        "INTEGER",
-        "DOUBLE"
+        "integer",
+        "double"
       ],
       [
-        "DOUBLE",
-        "INTEGER"
+        "double",
+        "integer"
       ],
       [
-        "DOUBLE",
-        "DOUBLE"
+        "double",
+        "double"
       ]
     ]
   },
@@ -1046,7 +1046,7 @@
     "str": "typeof",
     "signatures": [
       [
-        "ANY"
+        "any"
       ]
     ]
   },
@@ -1055,16 +1055,16 @@
     "str": "hour_of_day",
     "signatures": [
       [
-        "DATE"
+        "date"
       ],
       [
-        "TIME"
+        "time"
       ],
       [
-        "TIMESTAMP"
+        "timestamp"
       ],
       [
-        "STRING"
+        "string"
       ]
     ]
   },
@@ -1073,7 +1073,7 @@
     "str": "crc32",
     "signatures": [
       [
-        "STRING"
+        "string"
       ]
     ]
   },
@@ -1082,18 +1082,18 @@
     "str": "datetime",
     "signatures": [
       [
-        "TIMESTAMP",
-        "STRING"
+        "timestamp",
+        "string"
       ],
       [
-        "STRING",
-        "STRING"
+        "string",
+        "string"
       ],
       [
-        "TIMESTAMP"
+        "timestamp"
       ],
       [
-        "STRING"
+        "string"
       ]
     ]
   },
@@ -1102,36 +1102,36 @@
     "str": "subdate",
     "signatures": [
       [
-        "DATE",
-        "ANY"
+        "date",
+        "any"
       ],
       [
-        "TIME",
-        "ANY"
+        "time",
+        "any"
       ],
       [
-        "TIMESTAMP",
-        "ANY"
+        "timestamp",
+        "any"
       ],
       [
-        "DATE",
-        "INTEGER"
+        "date",
+        "integer"
       ],
       [
-        "TIME",
-        "INTEGER"
+        "time",
+        "integer"
       ],
       [
-        "TIMESTAMP",
-        "INTEGER"
+        "timestamp",
+        "integer"
       ],
       [
-        "STRING",
-        "ANY"
+        "string",
+        "any"
       ],
       [
-        "STRING",
-        "INTEGER"
+        "string",
+        "integer"
       ]
     ]
   },
@@ -1140,13 +1140,13 @@
     "str": "substring",
     "signatures": [
       [
-        "STRING",
-        "INTEGER"
+        "string",
+        "integer"
       ],
       [
-        "STRING",
-        "INTEGER",
-        "INTEGER"
+        "string",
+        "integer",
+        "integer"
       ]
     ]
   },
@@ -1155,84 +1155,84 @@
     "str": "timestampdiff",
     "signatures": [
       [
-        "STRING",
-        "DATE",
-        "DATE"
+        "string",
+        "date",
+        "date"
       ],
       [
-        "STRING",
-        "DATE",
-        "TIME"
+        "string",
+        "date",
+        "time"
       ],
       [
-        "STRING",
-        "DATE",
-        "TIMESTAMP"
+        "string",
+        "date",
+        "timestamp"
       ],
       [
-        "STRING",
-        "TIME",
-        "DATE"
+        "string",
+        "time",
+        "date"
       ],
       [
-        "STRING",
-        "TIME",
-        "TIME"
+        "string",
+        "time",
+        "time"
       ],
       [
-        "STRING",
-        "TIME",
-        "TIMESTAMP"
+        "string",
+        "time",
+        "timestamp"
       ],
       [
-        "STRING",
-        "TIMESTAMP",
-        "DATE"
+        "string",
+        "timestamp",
+        "date"
       ],
       [
-        "STRING",
-        "TIMESTAMP",
-        "TIME"
+        "string",
+        "timestamp",
+        "time"
       ],
       [
-        "STRING",
-        "TIMESTAMP",
-        "TIMESTAMP"
+        "string",
+        "timestamp",
+        "timestamp"
       ],
       [
-        "STRING",
-        "STRING",
-        "DATE"
+        "string",
+        "string",
+        "date"
       ],
       [
-        "STRING",
-        "STRING",
-        "TIME"
+        "string",
+        "string",
+        "time"
       ],
       [
-        "STRING",
-        "STRING",
-        "TIMESTAMP"
+        "string",
+        "string",
+        "timestamp"
       ],
       [
-        "STRING",
-        "DATE",
-        "STRING"
+        "string",
+        "date",
+        "string"
       ],
       [
-        "STRING",
-        "TIME",
-        "STRING"
+        "string",
+        "time",
+        "string"
       ],
       [
-        "STRING",
-        "TIMESTAMP",
-        "STRING"
+        "string",
+        "timestamp",
+        "string"
       ],
       [
-        "STRING",
-        "STRING",
-        "STRING"
+        "string",
+        "string",
+        "string"
       ]
     ]
   },
@@ -1241,7 +1241,7 @@
     "str": "is null",
     "signatures": [
       [
-        "ANY"
+        "any"
       ]
     ]
   },
@@ -1250,19 +1250,19 @@
     "str": "unix_timestamp",
     "signatures": [
       [
-        "DATE"
+        "date"
       ],
       [
-        "TIME"
+        "time"
       ],
       [
-        "TIMESTAMP"
+        "timestamp"
       ],
       [
-        "INTEGER"
+        "integer"
       ],
       [
-        "DOUBLE"
+        "double"
       ]
     ]
   },
@@ -1271,9 +1271,9 @@
     "str": "replace",
     "signatures": [
       [
-        "STRING",
-        "STRING",
-        "STRING"
+        "string",
+        "string",
+        "string"
       ]
     ]
   },
@@ -1282,16 +1282,16 @@
     "str": "microsecond",
     "signatures": [
       [
-        "DATE"
+        "date"
       ],
       [
-        "TIME"
+        "time"
       ],
       [
-        "TIMESTAMP"
+        "timestamp"
       ],
       [
-        "STRING"
+        "string"
       ]
     ]
   },
@@ -1300,8 +1300,8 @@
     "str": "!=",
     "signatures": [
       [
-        "COMPARABLE_TYPE",
-        "COMPARABLE_TYPE"
+        "comparable_type",
+        "comparable_type"
       ]
     ]
   },
@@ -1310,8 +1310,8 @@
     "str": "grok",
     "signatures": [
       [
-        "STRING",
-        "STRING"
+        "string",
+        "string"
       ]
     ]
   },
@@ -1320,7 +1320,7 @@
     "str": "sysdate",
     "signatures": [
       [
-        "INTEGER"
+        "integer"
       ]
     ]
   },
@@ -1329,19 +1329,19 @@
     "str": "to_seconds",
     "signatures": [
       [
-        "DATE"
+        "date"
       ],
       [
-        "TIME"
+        "time"
       ],
       [
-        "TIMESTAMP"
+        "timestamp"
       ],
       [
-        "STRING"
+        "string"
       ],
       [
-        "INTEGER"
+        "integer"
       ]
     ]
   },
@@ -1350,10 +1350,10 @@
     "str": "log2",
     "signatures": [
       [
-        "INTEGER"
+        "integer"
       ],
       [
-        "DOUBLE"
+        "double"
       ]
     ]
   },
@@ -1362,20 +1362,20 @@
     "str": "extract",
     "signatures": [
       [
-        "STRING",
-        "DATE"
+        "string",
+        "date"
       ],
       [
-        "STRING",
-        "TIME"
+        "string",
+        "time"
       ],
       [
-        "STRING",
-        "TIMESTAMP"
+        "string",
+        "timestamp"
       ],
       [
-        "STRING",
-        "STRING"
+        "string",
+        "string"
       ]
     ]
   },
@@ -1384,8 +1384,8 @@
     "str": "=",
     "signatures": [
       [
-        "COMPARABLE_TYPE",
-        "COMPARABLE_TYPE"
+        "comparable_type",
+        "comparable_type"
       ]
     ]
   },
@@ -1394,16 +1394,16 @@
     "str": "day_of_week",
     "signatures": [
       [
-        "DATE"
+        "date"
       ],
       [
-        "TIME"
+        "time"
       ],
       [
-        "TIMESTAMP"
+        "timestamp"
       ],
       [
-        "STRING"
+        "string"
       ]
     ]
   },
@@ -1412,10 +1412,10 @@
     "str": "log10",
     "signatures": [
       [
-        "INTEGER"
+        "integer"
       ],
       [
-        "DOUBLE"
+        "double"
       ]
     ]
   },
@@ -1424,8 +1424,8 @@
     "str": "<=",
     "signatures": [
       [
-        "COMPARABLE_TYPE",
-        "COMPARABLE_TYPE"
+        "comparable_type",
+        "comparable_type"
       ]
     ]
   },
@@ -1434,9 +1434,9 @@
     "str": "if",
     "signatures": [
       [
-        "BOOLEAN",
-        "ANY",
-        "ANY"
+        "boolean",
+        "any",
+        "any"
       ]
     ]
   },
@@ -1445,20 +1445,20 @@
     "str": "makedate",
     "signatures": [
       [
-        "INTEGER",
-        "INTEGER"
+        "integer",
+        "integer"
       ],
       [
-        "INTEGER",
-        "DOUBLE"
+        "integer",
+        "double"
       ],
       [
-        "DOUBLE",
-        "INTEGER"
+        "double",
+        "integer"
       ],
       [
-        "DOUBLE",
-        "DOUBLE"
+        "double",
+        "double"
       ]
     ]
   },
@@ -1467,7 +1467,7 @@
     "str": "length",
     "signatures": [
       [
-        "STRING"
+        "string"
       ]
     ]
   },
@@ -1476,10 +1476,10 @@
     "str": "sign",
     "signatures": [
       [
-        "INTEGER"
+        "integer"
       ],
       [
-        "DOUBLE"
+        "double"
       ]
     ]
   },
@@ -1488,8 +1488,8 @@
     "str": "get_format",
     "signatures": [
       [
-        "STRING",
-        "STRING"
+        "string",
+        "string"
       ]
     ]
   },
@@ -1498,13 +1498,13 @@
     "str": "dayname",
     "signatures": [
       [
-        "DATE"
+        "date"
       ],
       [
-        "TIMESTAMP"
+        "timestamp"
       ],
       [
-        "STRING"
+        "string"
       ]
     ]
   },
@@ -1513,8 +1513,8 @@
     "str": "nullif",
     "signatures": [
       [
-        "COMPARABLE_TYPE",
-        "COMPARABLE_TYPE"
+        "comparable_type",
+        "comparable_type"
       ]
     ]
   },
@@ -1523,19 +1523,19 @@
     "str": "regexp_extract",
     "signatures": [
       [
-        "STRING",
-        "STRING"
+        "string",
+        "string"
       ],
       [
-        "STRING",
-        "STRING",
-        "INTEGER"
+        "string",
+        "string",
+        "integer"
       ],
       [
-        "STRING",
-        "STRING",
-        "INTEGER",
-        "INTEGER"
+        "string",
+        "string",
+        "integer",
+        "integer"
       ]
     ]
   },
@@ -1544,16 +1544,16 @@
     "str": "day_of_year",
     "signatures": [
       [
-        "DATE"
+        "date"
       ],
       [
-        "TIME"
+        "time"
       ],
       [
-        "TIMESTAMP"
+        "timestamp"
       ],
       [
-        "STRING"
+        "string"
       ]
     ]
   },
@@ -1562,16 +1562,16 @@
     "str": "second",
     "signatures": [
       [
-        "DATE"
+        "date"
       ],
       [
-        "TIME"
+        "time"
       ],
       [
-        "TIMESTAMP"
+        "timestamp"
       ],
       [
-        "STRING"
+        "string"
       ]
     ]
   },
@@ -1580,8 +1580,8 @@
     "str": ">=",
     "signatures": [
       [
-        "COMPARABLE_TYPE",
-        "COMPARABLE_TYPE"
+        "comparable_type",
+        "comparable_type"
       ]
     ]
   },
@@ -1590,7 +1590,7 @@
     "str": "is not null",
     "signatures": [
       [
-        "ANY"
+        "any"
       ]
     ]
   },
@@ -1599,20 +1599,20 @@
     "str": "/",
     "signatures": [
       [
-        "INTEGER",
-        "INTEGER"
+        "integer",
+        "integer"
       ],
       [
-        "INTEGER",
-        "DOUBLE"
+        "integer",
+        "double"
       ],
       [
-        "DOUBLE",
-        "INTEGER"
+        "double",
+        "integer"
       ],
       [
-        "DOUBLE",
-        "DOUBLE"
+        "double",
+        "double"
       ]
     ]
   },
@@ -1621,24 +1621,24 @@
     "str": "convert_tz",
     "signatures": [
       [
-        "STRING",
-        "STRING",
-        "STRING"
+        "string",
+        "string",
+        "string"
       ],
       [
-        "DATE",
-        "STRING",
-        "STRING"
+        "date",
+        "string",
+        "string"
       ],
       [
-        "TIME",
-        "STRING",
-        "STRING"
+        "time",
+        "string",
+        "string"
       ],
       [
-        "TIMESTAMP",
-        "STRING",
-        "STRING"
+        "timestamp",
+        "string",
+        "string"
       ]
     ]
   },
@@ -1647,16 +1647,16 @@
     "str": "time_to_sec",
     "signatures": [
       [
-        "DATE"
+        "date"
       ],
       [
-        "TIME"
+        "time"
       ],
       [
-        "TIMESTAMP"
+        "timestamp"
       ],
       [
-        "STRING"
+        "string"
       ]
     ]
   },
@@ -1665,10 +1665,10 @@
     "str": "ln",
     "signatures": [
       [
-        "INTEGER"
+        "integer"
       ],
       [
-        "DOUBLE"
+        "double"
       ]
     ]
   },
@@ -1677,8 +1677,8 @@
     "str": "period_diff",
     "signatures": [
       [
-        "INTEGER",
-        "INTEGER"
+        "integer",
+        "integer"
       ]
     ]
   },
@@ -1687,7 +1687,7 @@
     "str": "ascii",
     "signatures": [
       [
-        "STRING"
+        "string"
       ]
     ]
   },
@@ -1696,8 +1696,8 @@
     "str": "and",
     "signatures": [
       [
-        "BOOLEAN",
-        "BOOLEAN"
+        "boolean",
+        "boolean"
       ]
     ]
   },
@@ -1706,7 +1706,7 @@
     "str": "json_valid",
     "signatures": [
       [
-        "STRING"
+        "string"
       ]
     ]
   },
@@ -1715,32 +1715,32 @@
     "str": "weekofyear",
     "signatures": [
       [
-        "DATE"
+        "date"
       ],
       [
-        "TIME"
+        "time"
       ],
       [
-        "TIMESTAMP"
+        "timestamp"
       ],
       [
-        "STRING"
+        "string"
       ],
       [
-        "STRING",
-        "INTEGER"
+        "string",
+        "integer"
       ],
       [
-        "DATE",
-        "INTEGER"
+        "date",
+        "integer"
       ],
       [
-        "TIME",
-        "INTEGER"
+        "time",
+        "integer"
       ],
       [
-        "TIMESTAMP",
-        "INTEGER"
+        "timestamp",
+        "integer"
       ]
     ]
   },
@@ -1749,20 +1749,20 @@
     "str": "atan2",
     "signatures": [
       [
-        "INTEGER",
-        "INTEGER"
+        "integer",
+        "integer"
       ],
       [
-        "INTEGER",
-        "DOUBLE"
+        "integer",
+        "double"
       ],
       [
-        "DOUBLE",
-        "INTEGER"
+        "double",
+        "integer"
       ],
       [
-        "DOUBLE",
-        "DOUBLE"
+        "double",
+        "double"
       ]
     ]
   },
@@ -1771,7 +1771,7 @@
     "str": "ltrim",
     "signatures": [
       [
-        "STRING"
+        "string"
       ]
     ]
   },
@@ -1780,10 +1780,10 @@
     "str": "asin",
     "signatures": [
       [
-        "INTEGER"
+        "integer"
       ],
       [
-        "DOUBLE"
+        "double"
       ]
     ]
   },
@@ -1792,20 +1792,20 @@
     "str": "mod",
     "signatures": [
       [
-        "INTEGER",
-        "INTEGER"
+        "integer",
+        "integer"
       ],
       [
-        "INTEGER",
-        "DOUBLE"
+        "integer",
+        "double"
       ],
       [
-        "DOUBLE",
-        "INTEGER"
+        "double",
+        "integer"
       ],
       [
-        "DOUBLE",
-        "DOUBLE"
+        "double",
+        "double"
       ]
     ]
   },
@@ -1814,7 +1814,7 @@
     "str": "reverse",
     "signatures": [
       [
-        "STRING"
+        "string"
       ]
     ]
   },
@@ -1823,16 +1823,16 @@
     "str": "quarter",
     "signatures": [
       [
-        "DATE"
+        "date"
       ],
       [
-        "TIME"
+        "time"
       ],
       [
-        "TIMESTAMP"
+        "timestamp"
       ],
       [
-        "STRING"
+        "string"
       ]
     ]
   },
@@ -1841,10 +1841,10 @@
     "str": "acos",
     "signatures": [
       [
-        "INTEGER"
+        "integer"
       ],
       [
-        "DOUBLE"
+        "double"
       ]
     ]
   },
@@ -1853,20 +1853,20 @@
     "str": "date_add",
     "signatures": [
       [
-        "DATE",
-        "ANY"
+        "date",
+        "any"
       ],
       [
-        "TIME",
-        "ANY"
+        "time",
+        "any"
       ],
       [
-        "TIMESTAMP",
-        "ANY"
+        "timestamp",
+        "any"
       ],
       [
-        "STRING",
-        "ANY"
+        "string",
+        "any"
       ]
     ]
   },
@@ -1875,16 +1875,16 @@
     "str": "month",
     "signatures": [
       [
-        "DATE"
+        "date"
       ],
       [
-        "TIME"
+        "time"
       ],
       [
-        "TIMESTAMP"
+        "timestamp"
       ],
       [
-        "STRING"
+        "string"
       ]
     ]
   },
@@ -1893,16 +1893,16 @@
     "str": "last_day",
     "signatures": [
       [
-        "DATE"
+        "date"
       ],
       [
-        "TIME"
+        "time"
       ],
       [
-        "TIMESTAMP"
+        "timestamp"
       ],
       [
-        "STRING"
+        "string"
       ]
     ]
   },
@@ -1911,10 +1911,10 @@
     "str": "cot",
     "signatures": [
       [
-        "INTEGER"
+        "integer"
       ],
       [
-        "DOUBLE"
+        "double"
       ]
     ]
   },
@@ -1923,16 +1923,16 @@
     "str": "minute_of_hour",
     "signatures": [
       [
-        "DATE"
+        "date"
       ],
       [
-        "TIME"
+        "time"
       ],
       [
-        "TIMESTAMP"
+        "timestamp"
       ],
       [
-        "STRING"
+        "string"
       ]
     ]
   },
@@ -1941,7 +1941,7 @@
     "str": "not",
     "signatures": [
       [
-        "BOOLEAN"
+        "boolean"
       ]
     ]
   },
@@ -1950,10 +1950,10 @@
     "str": "sin",
     "signatures": [
       [
-        "INTEGER"
+        "integer"
       ],
       [
-        "DOUBLE"
+        "double"
       ]
     ]
   },
@@ -1962,8 +1962,8 @@
     "str": "xor",
     "signatures": [
       [
-        "BOOLEAN",
-        "BOOLEAN"
+        "boolean",
+        "boolean"
       ]
     ]
   },
@@ -1972,16 +1972,16 @@
     "str": "month_of_year",
     "signatures": [
       [
-        "DATE"
+        "date"
       ],
       [
-        "TIME"
+        "time"
       ],
       [
-        "TIMESTAMP"
+        "timestamp"
       ],
       [
-        "STRING"
+        "string"
       ]
     ]
   },
@@ -1990,16 +1990,16 @@
     "str": "year",
     "signatures": [
       [
-        "DATE"
+        "date"
       ],
       [
-        "TIME"
+        "time"
       ],
       [
-        "TIMESTAMP"
+        "timestamp"
       ],
       [
-        "STRING"
+        "string"
       ]
     ]
   },
@@ -2008,13 +2008,13 @@
     "str": "monthname",
     "signatures": [
       [
-        "DATE"
+        "date"
       ],
       [
-        "TIMESTAMP"
+        "timestamp"
       ],
       [
-        "STRING"
+        "string"
       ]
     ]
   },
@@ -2023,14 +2023,14 @@
     "str": "conv",
     "signatures": [
       [
-        "STRING",
-        "INTEGER",
-        "INTEGER"
+        "string",
+        "integer",
+        "integer"
       ],
       [
-        "INTEGER",
-        "INTEGER",
-        "INTEGER"
+        "integer",
+        "integer",
+        "integer"
       ]
     ]
   },
@@ -2039,16 +2039,16 @@
     "str": "dayofweek",
     "signatures": [
       [
-        "DATE"
+        "date"
       ],
       [
-        "TIME"
+        "time"
       ],
       [
-        "TIMESTAMP"
+        "timestamp"
       ],
       [
-        "STRING"
+        "string"
       ]
     ]
   },
@@ -2057,8 +2057,8 @@
     "str": "regexp",
     "signatures": [
       [
-        "STRING",
-        "STRING"
+        "string",
+        "string"
       ]
     ]
   },
@@ -2067,8 +2067,8 @@
     "str": "cidrmatch",
     "signatures": [
       [
-        "STRING",
-        "STRING"
+        "string",
+        "string"
       ]
     ]
   },
@@ -2077,8 +2077,8 @@
     "str": ">",
     "signatures": [
       [
-        "COMPARABLE_TYPE",
-        "COMPARABLE_TYPE"
+        "comparable_type",
+        "comparable_type"
       ]
     ]
   },
@@ -2087,8 +2087,8 @@
     "str": "<",
     "signatures": [
       [
-        "COMPARABLE_TYPE",
-        "COMPARABLE_TYPE"
+        "comparable_type",
+        "comparable_type"
       ]
     ]
   },
@@ -2097,9 +2097,9 @@
     "str": "regexp_replace_3",
     "signatures": [
       [
-        "STRING",
-        "STRING",
-        "STRING"
+        "string",
+        "string",
+        "string"
       ]
     ]
   },
@@ -2108,8 +2108,8 @@
     "str": "strcmp",
     "signatures": [
       [
-        "STRING",
-        "STRING"
+        "string",
+        "string"
       ]
     ]
   },
@@ -2118,10 +2118,10 @@
     "str": "rand",
     "signatures": [
       [
-        "INTEGER"
+        "integer"
       ],
       [
-        "DOUBLE"
+        "double"
       ]
     ]
   },
@@ -2130,18 +2130,18 @@
     "str": "from_unixtime",
     "signatures": [
       [
-        "INTEGER"
+        "integer"
       ],
       [
-        "DOUBLE"
+        "double"
       ],
       [
-        "INTEGER",
-        "STRING"
+        "integer",
+        "string"
       ],
       [
-        "DOUBLE",
-        "STRING"
+        "double",
+        "string"
       ]
     ]
   },
@@ -2150,32 +2150,32 @@
     "str": "week",
     "signatures": [
       [
-        "DATE"
+        "date"
       ],
       [
-        "TIME"
+        "time"
       ],
       [
-        "TIMESTAMP"
+        "timestamp"
       ],
       [
-        "STRING"
+        "string"
       ],
       [
-        "STRING",
-        "INTEGER"
+        "string",
+        "integer"
       ],
       [
-        "DATE",
-        "INTEGER"
+        "date",
+        "integer"
       ],
       [
-        "TIME",
-        "INTEGER"
+        "time",
+        "integer"
       ],
       [
-        "TIMESTAMP",
-        "INTEGER"
+        "timestamp",
+        "integer"
       ]
     ]
   },
@@ -2184,7 +2184,7 @@
     "str": "lower",
     "signatures": [
       [
-        "STRING"
+        "string"
       ]
     ]
   },
@@ -2193,26 +2193,26 @@
     "str": "atan",
     "signatures": [
       [
-        "INTEGER"
+        "integer"
       ],
       [
-        "DOUBLE"
+        "double"
       ],
       [
-        "INTEGER",
-        "INTEGER"
+        "integer",
+        "integer"
       ],
       [
-        "INTEGER",
-        "DOUBLE"
+        "integer",
+        "double"
       ],
       [
-        "DOUBLE",
-        "INTEGER"
+        "double",
+        "integer"
       ],
       [
-        "DOUBLE",
-        "DOUBLE"
+        "double",
+        "double"
       ]
     ]
   },
@@ -2221,32 +2221,32 @@
     "str": "week_of_year",
     "signatures": [
       [
-        "DATE"
+        "date"
       ],
       [
-        "TIME"
+        "time"
       ],
       [
-        "TIMESTAMP"
+        "timestamp"
       ],
       [
-        "STRING"
+        "string"
       ],
       [
-        "STRING",
-        "INTEGER"
+        "string",
+        "integer"
       ],
       [
-        "DATE",
-        "INTEGER"
+        "date",
+        "integer"
       ],
       [
-        "TIME",
-        "INTEGER"
+        "time",
+        "integer"
       ],
       [
-        "TIMESTAMP",
-        "INTEGER"
+        "timestamp",
+        "integer"
       ]
     ]
   },
@@ -2255,8 +2255,8 @@
     "str": "period_add",
     "signatures": [
       [
-        "INTEGER",
-        "INTEGER"
+        "integer",
+        "integer"
       ]
     ]
   },
@@ -2265,12 +2265,12 @@
     "str": "item",
     "signatures": [
       [
-        "ARRAY",
-        "INTEGER"
+        "array",
+        "integer"
       ],
       [
-        "STRUCT",
-        "ANY"
+        "struct",
+        "any"
       ]
     ]
   },
@@ -2279,20 +2279,20 @@
     "str": "date_format",
     "signatures": [
       [
-        "DATE",
-        "STRING"
+        "date",
+        "string"
       ],
       [
-        "TIME",
-        "STRING"
+        "time",
+        "string"
       ],
       [
-        "TIMESTAMP",
-        "STRING"
+        "timestamp",
+        "string"
       ],
       [
-        "STRING",
-        "STRING"
+        "string",
+        "string"
       ]
     ]
   },
@@ -2301,10 +2301,10 @@
     "str": "sqrt",
     "signatures": [
       [
-        "INTEGER"
+        "integer"
       ],
       [
-        "DOUBLE"
+        "double"
       ]
     ]
   },
@@ -2313,8 +2313,8 @@
     "str": "earliest",
     "signatures": [
       [
-        "STRING",
-        "TIMESTAMP"
+        "string",
+        "timestamp"
       ]
     ]
   },
@@ -2323,16 +2323,16 @@
     "str": "dayofmonth",
     "signatures": [
       [
-        "DATE"
+        "date"
       ],
       [
-        "TIME"
+        "time"
       ],
       [
-        "TIMESTAMP"
+        "timestamp"
       ],
       [
-        "STRING"
+        "string"
       ]
     ]
   },
@@ -2341,10 +2341,10 @@
     "str": "degrees",
     "signatures": [
       [
-        "INTEGER"
+        "integer"
       ],
       [
-        "DOUBLE"
+        "double"
       ]
     ]
   },
@@ -2353,16 +2353,16 @@
     "str": "second_of_minute",
     "signatures": [
       [
-        "DATE"
+        "date"
       ],
       [
-        "TIME"
+        "time"
       ],
       [
-        "TIMESTAMP"
+        "timestamp"
       ],
       [
-        "STRING"
+        "string"
       ]
     ]
   },
@@ -2371,7 +2371,7 @@
     "str": "isempty",
     "signatures": [
       [
-        "ANY"
+        "any"
       ]
     ]
   },
@@ -2380,8 +2380,8 @@
     "str": "str_to_date",
     "signatures": [
       [
-        "STRING",
-        "STRING"
+        "string",
+        "string"
       ]
     ]
   },
@@ -2390,16 +2390,16 @@
     "str": "day_of_month",
     "signatures": [
       [
-        "DATE"
+        "date"
       ],
       [
-        "TIME"
+        "time"
       ],
       [
-        "TIMESTAMP"
+        "timestamp"
       ],
       [
-        "STRING"
+        "string"
       ]
     ]
   },
@@ -2408,20 +2408,20 @@
     "str": "time_format",
     "signatures": [
       [
-        "DATE",
-        "STRING"
+        "date",
+        "string"
       ],
       [
-        "TIME",
-        "STRING"
+        "time",
+        "string"
       ],
       [
-        "TIMESTAMP",
-        "STRING"
+        "timestamp",
+        "string"
       ],
       [
-        "STRING",
-        "STRING"
+        "string",
+        "string"
       ]
     ]
   },
@@ -2430,7 +2430,7 @@
     "str": "json_array_length",
     "signatures": [
       [
-        "STRING"
+        "string"
       ]
     ]
   },
@@ -2439,8 +2439,8 @@
     "str": "or",
     "signatures": [
       [
-        "BOOLEAN",
-        "BOOLEAN"
+        "boolean",
+        "boolean"
       ]
     ]
   },
@@ -2449,10 +2449,10 @@
     "str": "radians",
     "signatures": [
       [
-        "INTEGER"
+        "integer"
       ],
       [
-        "DOUBLE"
+        "double"
       ]
     ]
   }
