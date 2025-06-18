@@ -92,7 +92,7 @@ def build_case_from(function, signature, sig_idx):
         fp.write(f"documents = [\n")
         for doc in case['data']['documents']:
             fp.write('\t' + as_toml_table(doc) + ',\n')
-        fp.write(f']\n\n[query]\nlanguage = "ppl"\nquery = {repr(case['query']['query'])}\n')
+        fp.write(f']\n\n[query]\nlanguage = "ppl"\nquery = {json.dumps(case['query']['query'])}\n')
 
 
 def main_generate_tests():

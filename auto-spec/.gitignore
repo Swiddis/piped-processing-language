@@ -1,3 +1,6 @@
+# Temporarily ignore this since it's a lot of output and still changes significantly every run
+src/query_cases/cases
+
 # Created by https://www.toptal.com/developers/gitignore/api/python
 # Edit at https://www.toptal.com/developers/gitignore?templates=python
 
