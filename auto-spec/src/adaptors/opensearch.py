@@ -1,5 +1,6 @@
 import asyncio
 import json
+
 from opensearchpy import AsyncOpenSearch
 
 from adaptors import QueryableAdaptor
@@ -26,7 +27,7 @@ class OpenSearchAdaptor(QueryableAdaptor):
         bulk_req = "\n".join(header + "\n" + json.dumps(doc) for doc in index.documents)
         async with self.request_sem:
             response = await self.client.bulk(
-                bulk_req, params={"refresh": "wait_for", "timeout": 120}
+                bulk_req, params={"refresh": "true", "timeout": 120}
             )
         assert not response["errors"], f"failed to insert to index: {response}"
 

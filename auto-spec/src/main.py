@@ -1,3 +1,8 @@
+# Enable type checking
+from beartype.claw import beartype_package
+
+beartype_package("src")
+
 import asyncio
 import typing
 
@@ -8,7 +13,7 @@ from adaptors.context import context
 from adaptors.opensearch import OpenSearchAdaptor
 
 
-def opensearch():
+def opensearch() -> OpenSearchAdaptor:
     # TODO get this from a config instead of hardcoding it
     client = AsyncOpenSearch([{"host": "localhost", "port": 9200}])
     return OpenSearchAdaptor(client)
@@ -49,7 +54,7 @@ async def main():
     try:
         futures = [
             asyncio.create_task(do_test_capturing_result(os_adaptor))
-            for _ in range(2000)
+            for _ in range(1000)
         ]
         total = 0
         for future in tqdm.tqdm(asyncio.as_completed(futures), total=len(futures)):

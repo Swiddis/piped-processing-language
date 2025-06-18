@@ -1,5 +1,6 @@
-import faker
 import random
+
+import faker
 
 _fake = faker.Faker()
 

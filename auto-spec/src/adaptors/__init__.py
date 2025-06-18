@@ -1,6 +1,7 @@
-from abc import ABC, abstractmethod
-from data_generation.index import OpenSearchIndex
 import typing
+from abc import ABC, abstractmethod
+
+from data_generation.index import OpenSearchIndex
 
 
 class QueryableAdaptor(ABC):

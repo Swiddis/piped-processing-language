@@ -1,7 +1,8 @@
-from opensearchpy import AsyncOpenSearch
-from dataclasses import dataclass
 import random
 import uuid
+from dataclasses import dataclass
+
+from opensearchpy import AsyncOpenSearch
 
 from data_generation.data import OPENSEARCH_DATA_TYPES, gen_column_name
 
