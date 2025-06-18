@@ -13,6 +13,9 @@ def load_function_registry(registry):
         if line.startswith('-'):
             if 'No Type Checking' in line:
                 continue
+            if ':' in line:
+                fun_alias = line.split(':')[0].removeprefix('- ')
+                curr_fun_data['str'] = fun_alias
             for match in re.findall(r"\[[\w,]+\]", line):
                 types = match.strip('[]')
                 curr_fun_data['signatures'].append(types.split(','))
@@ -24,7 +27,7 @@ def load_function_registry(registry):
             else:
                 functions.append(curr_fun_data)
             curr_fun = line
-            curr_fun_data = { 'name': line, 'signatures': [] }
+            curr_fun_data = { 'name': line, 'str': line, 'signatures': [] }
     
     return functions, skipped
 
