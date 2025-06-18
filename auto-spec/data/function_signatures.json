@@ -1,0 +1,2329 @@
+[
+  {
+    "name": "ADDDATE",
+    "signatures": [
+      [
+        "DATE",
+        "ANY"
+      ],
+      [
+        "TIME",
+        "ANY"
+      ],
+      [
+        "TIMESTAMP",
+        "ANY"
+      ],
+      [
+        "DATE",
+        "INTEGER"
+      ],
+      [
+        "TIME",
+        "INTEGER"
+      ],
+      [
+        "TIMESTAMP",
+        "INTEGER"
+      ],
+      [
+        "STRING",
+        "ANY"
+      ],
+      [
+        "STRING",
+        "INTEGER"
+      ]
+    ]
+  },
+  {
+    "name": "DAYOFYEAR",
+    "signatures": [
+      [
+        "DATE"
+      ],
+      [
+        "TIME"
+      ],
+      [
+        "TIMESTAMP"
+      ],
+      [
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "MINUTE_OF_DAY",
+    "signatures": [
+      [
+        "STRING"
+      ],
+      [
+        "TIME"
+      ],
+      [
+        "TIMESTAMP"
+      ]
+    ]
+  },
+  {
+    "name": "LATEST",
+    "signatures": [
+      [
+        "STRING",
+        "TIMESTAMP"
+      ]
+    ]
+  },
+  {
+    "name": "MODULUS",
+    "signatures": [
+      [
+        "INTEGER",
+        "INTEGER"
+      ],
+      [
+        "INTEGER",
+        "DOUBLE"
+      ],
+      [
+        "DOUBLE",
+        "INTEGER"
+      ],
+      [
+        "DOUBLE",
+        "DOUBLE"
+      ]
+    ]
+  },
+  {
+    "name": "SUBTIME",
+    "signatures": [
+      [
+        "STRING",
+        "STRING"
+      ],
+      [
+        "DATE",
+        "DATE"
+      ],
+      [
+        "DATE",
+        "TIME"
+      ],
+      [
+        "DATE",
+        "TIMESTAMP"
+      ],
+      [
+        "TIME",
+        "DATE"
+      ],
+      [
+        "TIME",
+        "TIME"
+      ],
+      [
+        "TIME",
+        "TIMESTAMP"
+      ],
+      [
+        "TIMESTAMP",
+        "DATE"
+      ],
+      [
+        "TIMESTAMP",
+        "TIME"
+      ],
+      [
+        "TIMESTAMP",
+        "TIMESTAMP"
+      ],
+      [
+        "DATE",
+        "STRING"
+      ],
+      [
+        "TIME",
+        "STRING"
+      ],
+      [
+        "TIMESTAMP",
+        "STRING"
+      ],
+      [
+        "STRING",
+        "DATE"
+      ],
+      [
+        "STRING",
+        "TIME"
+      ],
+      [
+        "STRING",
+        "TIMESTAMP"
+      ]
+    ]
+  },
+  {
+    "name": "HOUR",
+    "signatures": [
+      [
+        "DATE"
+      ],
+      [
+        "TIME"
+      ],
+      [
+        "TIMESTAMP"
+      ],
+      [
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "IS_BLANK",
+    "signatures": [
+      [
+        "ANY"
+      ]
+    ]
+  },
+  {
+    "name": "SEC_TO_TIME",
+    "signatures": [
+      [
+        "INTEGER"
+      ],
+      [
+        "DOUBLE"
+      ]
+    ]
+  },
+  {
+    "name": "YEARWEEK",
+    "signatures": [
+      [
+        "DATE"
+      ],
+      [
+        "TIME"
+      ],
+      [
+        "TIMESTAMP"
+      ],
+      [
+        "STRING"
+      ],
+      [
+        "STRING",
+        "INTEGER"
+      ],
+      [
+        "DATE",
+        "INTEGER"
+      ],
+      [
+        "TIME",
+        "INTEGER"
+      ],
+      [
+        "TIMESTAMP",
+        "INTEGER"
+      ]
+    ]
+  },
+  {
+    "name": "ABS",
+    "signatures": [
+      [
+        "INTEGER"
+      ],
+      [
+        "DOUBLE"
+      ],
+      [
+        "ANY"
+      ]
+    ]
+  },
+  {
+    "name": "TIMESTAMPADD",
+    "signatures": [
+      [
+        "STRING",
+        "INTEGER",
+        "STRING"
+      ],
+      [
+        "STRING",
+        "INTEGER",
+        "DATE"
+      ],
+      [
+        "STRING",
+        "INTEGER",
+        "TIME"
+      ],
+      [
+        "STRING",
+        "INTEGER",
+        "TIMESTAMP"
+      ]
+    ]
+  },
+  {
+    "name": "COS",
+    "signatures": [
+      [
+        "INTEGER"
+      ],
+      [
+        "DOUBLE"
+      ]
+    ]
+  },
+  {
+    "name": "TIME",
+    "signatures": [
+      [
+        "DATE"
+      ],
+      [
+        "TIME"
+      ],
+      [
+        "TIMESTAMP"
+      ],
+      [
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "TRIM",
+    "signatures": [
+      [
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "MINUTE",
+    "signatures": [
+      [
+        "DATE"
+      ],
+      [
+        "TIME"
+      ],
+      [
+        "TIMESTAMP"
+      ],
+      [
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "POW",
+    "signatures": [
+      [
+        "INTEGER",
+        "INTEGER"
+      ],
+      [
+        "INTEGER",
+        "DOUBLE"
+      ],
+      [
+        "DOUBLE",
+        "INTEGER"
+      ],
+      [
+        "DOUBLE",
+        "DOUBLE"
+      ]
+    ]
+  },
+  {
+    "name": "ADDTIME",
+    "signatures": [
+      [
+        "STRING",
+        "STRING"
+      ],
+      [
+        "DATE",
+        "DATE"
+      ],
+      [
+        "DATE",
+        "TIME"
+      ],
+      [
+        "DATE",
+        "TIMESTAMP"
+      ],
+      [
+        "TIME",
+        "DATE"
+      ],
+      [
+        "TIME",
+        "TIME"
+      ],
+      [
+        "TIME",
+        "TIMESTAMP"
+      ],
+      [
+        "TIMESTAMP",
+        "DATE"
+      ],
+      [
+        "TIMESTAMP",
+        "TIME"
+      ],
+      [
+        "TIMESTAMP",
+        "TIMESTAMP"
+      ],
+      [
+        "DATE",
+        "STRING"
+      ],
+      [
+        "TIME",
+        "STRING"
+      ],
+      [
+        "TIMESTAMP",
+        "STRING"
+      ],
+      [
+        "STRING",
+        "DATE"
+      ],
+      [
+        "STRING",
+        "TIME"
+      ],
+      [
+        "STRING",
+        "TIMESTAMP"
+      ]
+    ]
+  },
+  {
+    "name": "CBRT",
+    "signatures": [
+      [
+        "INTEGER"
+      ],
+      [
+        "DOUBLE"
+      ]
+    ]
+  },
+  {
+    "name": "UPPER",
+    "signatures": [
+      [
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "FROM_DAYS",
+    "signatures": [
+      [
+        "INTEGER"
+      ]
+    ]
+  },
+  {
+    "name": "SHA2",
+    "signatures": [
+      [
+        "STRING",
+        "INTEGER"
+      ]
+    ]
+  },
+  {
+    "name": "INTERNAL_PATTERN_PARSER",
+    "signatures": [
+      [
+        "STRING",
+        "ANY"
+      ],
+      [
+        "STRING",
+        "STRING"
+      ],
+      [
+        "STRING",
+        "ARRAY"
+      ]
+    ]
+  },
+  {
+    "name": "WEEKDAY",
+    "signatures": [
+      [
+        "DATE"
+      ],
+      [
+        "TIME"
+      ],
+      [
+        "TIMESTAMP"
+      ],
+      [
+        "STRING"
+      ],
+      [
+        "DATE",
+        "INTEGER"
+      ],
+      [
+        "TIME",
+        "INTEGER"
+      ],
+      [
+        "TIMESTAMP",
+        "INTEGER"
+      ]
+    ]
+  },
+  {
+    "name": "DATE_SUB",
+    "signatures": [
+      [
+        "DATE",
+        "ANY"
+      ],
+      [
+        "TIME",
+        "ANY"
+      ],
+      [
+        "TIMESTAMP",
+        "ANY"
+      ],
+      [
+        "STRING",
+        "ANY"
+      ]
+    ]
+  },
+  {
+    "name": "LOG",
+    "signatures": [
+      [
+        "INTEGER",
+        "INTEGER"
+      ],
+      [
+        "INTEGER",
+        "DOUBLE"
+      ],
+      [
+        "DOUBLE",
+        "INTEGER"
+      ],
+      [
+        "DOUBLE",
+        "DOUBLE"
+      ],
+      [
+        "INTEGER"
+      ],
+      [
+        "DOUBLE"
+      ]
+    ]
+  },
+  {
+    "name": "TIMEDIFF",
+    "signatures": [
+      [
+        "STRING",
+        "STRING"
+      ],
+      [
+        "DATE",
+        "DATE"
+      ],
+      [
+        "DATE",
+        "TIME"
+      ],
+      [
+        "DATE",
+        "TIMESTAMP"
+      ],
+      [
+        "TIME",
+        "DATE"
+      ],
+      [
+        "TIME",
+        "TIME"
+      ],
+      [
+        "TIME",
+        "TIMESTAMP"
+      ],
+      [
+        "TIMESTAMP",
+        "DATE"
+      ],
+      [
+        "TIMESTAMP",
+        "TIME"
+      ],
+      [
+        "TIMESTAMP",
+        "TIMESTAMP"
+      ],
+      [
+        "DATE",
+        "STRING"
+      ],
+      [
+        "TIME",
+        "STRING"
+      ],
+      [
+        "TIMESTAMP",
+        "STRING"
+      ],
+      [
+        "STRING",
+        "DATE"
+      ],
+      [
+        "STRING",
+        "TIME"
+      ],
+      [
+        "STRING",
+        "TIMESTAMP"
+      ]
+    ]
+  },
+  {
+    "name": "DAY",
+    "signatures": [
+      [
+        "DATE"
+      ],
+      [
+        "TIME"
+      ],
+      [
+        "TIMESTAMP"
+      ],
+      [
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "EXP",
+    "signatures": [
+      [
+        "INTEGER"
+      ],
+      [
+        "DOUBLE"
+      ]
+    ]
+  },
+  {
+    "name": "MAKETIME",
+    "signatures": [
+      [
+        "INTEGER",
+        "INTEGER",
+        "INTEGER"
+      ],
+      [
+        "INTEGER",
+        "INTEGER",
+        "DOUBLE"
+      ],
+      [
+        "INTEGER",
+        "DOUBLE",
+        "INTEGER"
+      ],
+      [
+        "INTEGER",
+        "DOUBLE",
+        "DOUBLE"
+      ],
+      [
+        "DOUBLE",
+        "INTEGER",
+        "INTEGER"
+      ],
+      [
+        "DOUBLE",
+        "INTEGER",
+        "DOUBLE"
+      ],
+      [
+        "DOUBLE",
+        "DOUBLE",
+        "INTEGER"
+      ],
+      [
+        "DOUBLE",
+        "DOUBLE",
+        "DOUBLE"
+      ]
+    ]
+  },
+  {
+    "name": "SPAN",
+    "signatures": [
+      [
+        "STRING",
+        "INTEGER",
+        "STRING"
+      ],
+      [
+        "DATE",
+        "INTEGER",
+        "STRING"
+      ],
+      [
+        "TIME",
+        "INTEGER",
+        "STRING"
+      ],
+      [
+        "TIMESTAMP",
+        "INTEGER",
+        "STRING"
+      ],
+      [
+        "INTEGER",
+        "INTEGER",
+        "ANY"
+      ]
+    ]
+  },
+  {
+    "name": "ARRAY_LENGTH",
+    "signatures": [
+      [
+        "ARRAY"
+      ]
+    ]
+  },
+  {
+    "name": "MULTIPLY",
+    "signatures": [
+      [
+        "INTEGER",
+        "INTEGER"
+      ],
+      [
+        "INTEGER",
+        "DOUBLE"
+      ],
+      [
+        "DOUBLE",
+        "INTEGER"
+      ],
+      [
+        "DOUBLE",
+        "DOUBLE"
+      ],
+      [
+        "ANY",
+        "INTEGER"
+      ],
+      [
+        "ANY",
+        "DOUBLE"
+      ],
+      [
+        "INTEGER",
+        "ANY"
+      ],
+      [
+        "DOUBLE",
+        "ANY"
+      ]
+    ]
+  },
+  {
+    "name": "DATE",
+    "signatures": [
+      [
+        "DATE"
+      ],
+      [
+        "TIMESTAMP"
+      ],
+      [
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "IS_PRESENT",
+    "signatures": [
+      [
+        "ANY"
+      ]
+    ]
+  },
+  {
+    "name": "MODULUSFUNCTION",
+    "signatures": [
+      [
+        "INTEGER",
+        "INTEGER"
+      ],
+      [
+        "INTEGER",
+        "DOUBLE"
+      ],
+      [
+        "DOUBLE",
+        "INTEGER"
+      ],
+      [
+        "DOUBLE",
+        "DOUBLE"
+      ]
+    ]
+  },
+  {
+    "name": "DATEDIFF",
+    "signatures": [
+      [
+        "STRING",
+        "STRING"
+      ],
+      [
+        "DATE",
+        "DATE"
+      ],
+      [
+        "DATE",
+        "TIME"
+      ],
+      [
+        "DATE",
+        "TIMESTAMP"
+      ],
+      [
+        "TIME",
+        "DATE"
+      ],
+      [
+        "TIME",
+        "TIME"
+      ],
+      [
+        "TIME",
+        "TIMESTAMP"
+      ],
+      [
+        "TIMESTAMP",
+        "DATE"
+      ],
+      [
+        "TIMESTAMP",
+        "TIME"
+      ],
+      [
+        "TIMESTAMP",
+        "TIMESTAMP"
+      ],
+      [
+        "DATE",
+        "STRING"
+      ],
+      [
+        "TIME",
+        "STRING"
+      ],
+      [
+        "TIMESTAMP",
+        "STRING"
+      ],
+      [
+        "STRING",
+        "DATE"
+      ],
+      [
+        "STRING",
+        "TIME"
+      ],
+      [
+        "STRING",
+        "TIMESTAMP"
+      ]
+    ]
+  },
+  {
+    "name": "TIMESTAMP",
+    "signatures": [
+      [
+        "STRING"
+      ],
+      [
+        "DATE"
+      ],
+      [
+        "TIME"
+      ],
+      [
+        "TIMESTAMP"
+      ],
+      [
+        "STRING",
+        "STRING"
+      ],
+      [
+        "DATE",
+        "DATE"
+      ],
+      [
+        "DATE",
+        "TIME"
+      ],
+      [
+        "DATE",
+        "TIMESTAMP"
+      ],
+      [
+        "TIME",
+        "DATE"
+      ],
+      [
+        "TIME",
+        "TIME"
+      ],
+      [
+        "TIME",
+        "TIMESTAMP"
+      ],
+      [
+        "TIMESTAMP",
+        "DATE"
+      ],
+      [
+        "TIMESTAMP",
+        "TIME"
+      ],
+      [
+        "TIMESTAMP",
+        "TIMESTAMP"
+      ],
+      [
+        "STRING",
+        "DATE"
+      ],
+      [
+        "STRING",
+        "TIME"
+      ],
+      [
+        "STRING",
+        "TIMESTAMP"
+      ],
+      [
+        "DATE",
+        "STRING"
+      ],
+      [
+        "TIME",
+        "STRING"
+      ],
+      [
+        "TIMESTAMP",
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "RTRIM",
+    "signatures": [
+      [
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "SUBSTR",
+    "signatures": [
+      [
+        "STRING",
+        "INTEGER"
+      ],
+      [
+        "STRING",
+        "INTEGER",
+        "INTEGER"
+      ]
+    ]
+  },
+  {
+    "name": "POWER",
+    "signatures": [
+      [
+        "INTEGER",
+        "INTEGER"
+      ],
+      [
+        "INTEGER",
+        "DOUBLE"
+      ],
+      [
+        "DOUBLE",
+        "INTEGER"
+      ],
+      [
+        "DOUBLE",
+        "DOUBLE"
+      ]
+    ]
+  },
+  {
+    "name": "TYPEOF",
+    "signatures": [
+      [
+        "ANY"
+      ]
+    ]
+  },
+  {
+    "name": "HOUR_OF_DAY",
+    "signatures": [
+      [
+        "DATE"
+      ],
+      [
+        "TIME"
+      ],
+      [
+        "TIMESTAMP"
+      ],
+      [
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "CRC32",
+    "signatures": [
+      [
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "DATETIME",
+    "signatures": [
+      [
+        "TIMESTAMP",
+        "STRING"
+      ],
+      [
+        "STRING",
+        "STRING"
+      ],
+      [
+        "TIMESTAMP"
+      ],
+      [
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "SUBDATE",
+    "signatures": [
+      [
+        "DATE",
+        "ANY"
+      ],
+      [
+        "TIME",
+        "ANY"
+      ],
+      [
+        "TIMESTAMP",
+        "ANY"
+      ],
+      [
+        "DATE",
+        "INTEGER"
+      ],
+      [
+        "TIME",
+        "INTEGER"
+      ],
+      [
+        "TIMESTAMP",
+        "INTEGER"
+      ],
+      [
+        "STRING",
+        "ANY"
+      ],
+      [
+        "STRING",
+        "INTEGER"
+      ]
+    ]
+  },
+  {
+    "name": "SUBSTRING",
+    "signatures": [
+      [
+        "STRING",
+        "INTEGER"
+      ],
+      [
+        "STRING",
+        "INTEGER",
+        "INTEGER"
+      ]
+    ]
+  },
+  {
+    "name": "TIMESTAMPDIFF",
+    "signatures": [
+      [
+        "STRING",
+        "DATE",
+        "DATE"
+      ],
+      [
+        "STRING",
+        "DATE",
+        "TIME"
+      ],
+      [
+        "STRING",
+        "DATE",
+        "TIMESTAMP"
+      ],
+      [
+        "STRING",
+        "TIME",
+        "DATE"
+      ],
+      [
+        "STRING",
+        "TIME",
+        "TIME"
+      ],
+      [
+        "STRING",
+        "TIME",
+        "TIMESTAMP"
+      ],
+      [
+        "STRING",
+        "TIMESTAMP",
+        "DATE"
+      ],
+      [
+        "STRING",
+        "TIMESTAMP",
+        "TIME"
+      ],
+      [
+        "STRING",
+        "TIMESTAMP",
+        "TIMESTAMP"
+      ],
+      [
+        "STRING",
+        "STRING",
+        "DATE"
+      ],
+      [
+        "STRING",
+        "STRING",
+        "TIME"
+      ],
+      [
+        "STRING",
+        "STRING",
+        "TIMESTAMP"
+      ],
+      [
+        "STRING",
+        "DATE",
+        "STRING"
+      ],
+      [
+        "STRING",
+        "TIME",
+        "STRING"
+      ],
+      [
+        "STRING",
+        "TIMESTAMP",
+        "STRING"
+      ],
+      [
+        "STRING",
+        "STRING",
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "IS_NULL",
+    "signatures": [
+      [
+        "ANY"
+      ]
+    ]
+  },
+  {
+    "name": "UNIX_TIMESTAMP",
+    "signatures": [
+      [
+        "DATE"
+      ],
+      [
+        "TIME"
+      ],
+      [
+        "TIMESTAMP"
+      ],
+      [
+        "INTEGER"
+      ],
+      [
+        "DOUBLE"
+      ]
+    ]
+  },
+  {
+    "name": "REPLACE",
+    "signatures": [
+      [
+        "STRING",
+        "STRING",
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "MICROSECOND",
+    "signatures": [
+      [
+        "DATE"
+      ],
+      [
+        "TIME"
+      ],
+      [
+        "TIMESTAMP"
+      ],
+      [
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "NOTEQUAL",
+    "signatures": [
+      [
+        "COMPARABLE_TYPE",
+        "COMPARABLE_TYPE"
+      ]
+    ]
+  },
+  {
+    "name": "INTERNAL_GROK",
+    "signatures": [
+      [
+        "STRING",
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "SYSDATE",
+    "signatures": [
+      [
+        "INTEGER"
+      ]
+    ]
+  },
+  {
+    "name": "TO_SECONDS",
+    "signatures": [
+      [
+        "DATE"
+      ],
+      [
+        "TIME"
+      ],
+      [
+        "TIMESTAMP"
+      ],
+      [
+        "STRING"
+      ],
+      [
+        "INTEGER"
+      ]
+    ]
+  },
+  {
+    "name": "LOG2",
+    "signatures": [
+      [
+        "INTEGER"
+      ],
+      [
+        "DOUBLE"
+      ]
+    ]
+  },
+  {
+    "name": "EXTRACT",
+    "signatures": [
+      [
+        "STRING",
+        "DATE"
+      ],
+      [
+        "STRING",
+        "TIME"
+      ],
+      [
+        "STRING",
+        "TIMESTAMP"
+      ],
+      [
+        "STRING",
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "EQUAL",
+    "signatures": [
+      [
+        "COMPARABLE_TYPE",
+        "COMPARABLE_TYPE"
+      ]
+    ]
+  },
+  {
+    "name": "DAY_OF_WEEK",
+    "signatures": [
+      [
+        "DATE"
+      ],
+      [
+        "TIME"
+      ],
+      [
+        "TIMESTAMP"
+      ],
+      [
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "LOG10",
+    "signatures": [
+      [
+        "INTEGER"
+      ],
+      [
+        "DOUBLE"
+      ]
+    ]
+  },
+  {
+    "name": "LTE",
+    "signatures": [
+      [
+        "COMPARABLE_TYPE",
+        "COMPARABLE_TYPE"
+      ]
+    ]
+  },
+  {
+    "name": "IF",
+    "signatures": [
+      [
+        "BOOLEAN",
+        "ANY",
+        "ANY"
+      ]
+    ]
+  },
+  {
+    "name": "MAKEDATE",
+    "signatures": [
+      [
+        "INTEGER",
+        "INTEGER"
+      ],
+      [
+        "INTEGER",
+        "DOUBLE"
+      ],
+      [
+        "DOUBLE",
+        "INTEGER"
+      ],
+      [
+        "DOUBLE",
+        "DOUBLE"
+      ]
+    ]
+  },
+  {
+    "name": "LENGTH",
+    "signatures": [
+      [
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "SIGN",
+    "signatures": [
+      [
+        "INTEGER"
+      ],
+      [
+        "DOUBLE"
+      ]
+    ]
+  },
+  {
+    "name": "GET_FORMAT",
+    "signatures": [
+      [
+        "STRING",
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "DAYNAME",
+    "signatures": [
+      [
+        "DATE"
+      ],
+      [
+        "TIMESTAMP"
+      ],
+      [
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "NULLIF",
+    "signatures": [
+      [
+        "COMPARABLE_TYPE",
+        "COMPARABLE_TYPE"
+      ]
+    ]
+  },
+  {
+    "name": "INTERNAL_REGEXP_EXTRACT",
+    "signatures": [
+      [
+        "STRING",
+        "STRING"
+      ],
+      [
+        "STRING",
+        "STRING",
+        "INTEGER"
+      ],
+      [
+        "STRING",
+        "STRING",
+        "INTEGER",
+        "INTEGER"
+      ]
+    ]
+  },
+  {
+    "name": "DAY_OF_YEAR",
+    "signatures": [
+      [
+        "DATE"
+      ],
+      [
+        "TIME"
+      ],
+      [
+        "TIMESTAMP"
+      ],
+      [
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "SECOND",
+    "signatures": [
+      [
+        "DATE"
+      ],
+      [
+        "TIME"
+      ],
+      [
+        "TIMESTAMP"
+      ],
+      [
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "GTE",
+    "signatures": [
+      [
+        "COMPARABLE_TYPE",
+        "COMPARABLE_TYPE"
+      ]
+    ]
+  },
+  {
+    "name": "IS_NOT_NULL",
+    "signatures": [
+      [
+        "ANY"
+      ]
+    ]
+  },
+  {
+    "name": "DIVIDE",
+    "signatures": [
+      [
+        "INTEGER",
+        "INTEGER"
+      ],
+      [
+        "INTEGER",
+        "DOUBLE"
+      ],
+      [
+        "DOUBLE",
+        "INTEGER"
+      ],
+      [
+        "DOUBLE",
+        "DOUBLE"
+      ]
+    ]
+  },
+  {
+    "name": "CONVERT_TZ",
+    "signatures": [
+      [
+        "STRING",
+        "STRING",
+        "STRING"
+      ],
+      [
+        "DATE",
+        "STRING",
+        "STRING"
+      ],
+      [
+        "TIME",
+        "STRING",
+        "STRING"
+      ],
+      [
+        "TIMESTAMP",
+        "STRING",
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "TIME_TO_SEC",
+    "signatures": [
+      [
+        "DATE"
+      ],
+      [
+        "TIME"
+      ],
+      [
+        "TIMESTAMP"
+      ],
+      [
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "LN",
+    "signatures": [
+      [
+        "INTEGER"
+      ],
+      [
+        "DOUBLE"
+      ]
+    ]
+  },
+  {
+    "name": "PERIOD_DIFF",
+    "signatures": [
+      [
+        "INTEGER",
+        "INTEGER"
+      ]
+    ]
+  },
+  {
+    "name": "ASCII",
+    "signatures": [
+      [
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "AND",
+    "signatures": [
+      [
+        "BOOLEAN",
+        "BOOLEAN"
+      ]
+    ]
+  },
+  {
+    "name": "JSON_VALID",
+    "signatures": [
+      [
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "WEEKOFYEAR",
+    "signatures": [
+      [
+        "DATE"
+      ],
+      [
+        "TIME"
+      ],
+      [
+        "TIMESTAMP"
+      ],
+      [
+        "STRING"
+      ],
+      [
+        "STRING",
+        "INTEGER"
+      ],
+      [
+        "DATE",
+        "INTEGER"
+      ],
+      [
+        "TIME",
+        "INTEGER"
+      ],
+      [
+        "TIMESTAMP",
+        "INTEGER"
+      ]
+    ]
+  },
+  {
+    "name": "ATAN2",
+    "signatures": [
+      [
+        "INTEGER",
+        "INTEGER"
+      ],
+      [
+        "INTEGER",
+        "DOUBLE"
+      ],
+      [
+        "DOUBLE",
+        "INTEGER"
+      ],
+      [
+        "DOUBLE",
+        "DOUBLE"
+      ]
+    ]
+  },
+  {
+    "name": "LTRIM",
+    "signatures": [
+      [
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "ASIN",
+    "signatures": [
+      [
+        "INTEGER"
+      ],
+      [
+        "DOUBLE"
+      ]
+    ]
+  },
+  {
+    "name": "MOD",
+    "signatures": [
+      [
+        "INTEGER",
+        "INTEGER"
+      ],
+      [
+        "INTEGER",
+        "DOUBLE"
+      ],
+      [
+        "DOUBLE",
+        "INTEGER"
+      ],
+      [
+        "DOUBLE",
+        "DOUBLE"
+      ]
+    ]
+  },
+  {
+    "name": "REVERSE",
+    "signatures": [
+      [
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "QUARTER",
+    "signatures": [
+      [
+        "DATE"
+      ],
+      [
+        "TIME"
+      ],
+      [
+        "TIMESTAMP"
+      ],
+      [
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "ACOS",
+    "signatures": [
+      [
+        "INTEGER"
+      ],
+      [
+        "DOUBLE"
+      ]
+    ]
+  },
+  {
+    "name": "DATE_ADD",
+    "signatures": [
+      [
+        "DATE",
+        "ANY"
+      ],
+      [
+        "TIME",
+        "ANY"
+      ],
+      [
+        "TIMESTAMP",
+        "ANY"
+      ],
+      [
+        "STRING",
+        "ANY"
+      ]
+    ]
+  },
+  {
+    "name": "MONTH",
+    "signatures": [
+      [
+        "DATE"
+      ],
+      [
+        "TIME"
+      ],
+      [
+        "TIMESTAMP"
+      ],
+      [
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "LAST_DAY",
+    "signatures": [
+      [
+        "DATE"
+      ],
+      [
+        "TIME"
+      ],
+      [
+        "TIMESTAMP"
+      ],
+      [
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "COT",
+    "signatures": [
+      [
+        "INTEGER"
+      ],
+      [
+        "DOUBLE"
+      ]
+    ]
+  },
+  {
+    "name": "MINUTE_OF_HOUR",
+    "signatures": [
+      [
+        "DATE"
+      ],
+      [
+        "TIME"
+      ],
+      [
+        "TIMESTAMP"
+      ],
+      [
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "NOT",
+    "signatures": [
+      [
+        "BOOLEAN"
+      ]
+    ]
+  },
+  {
+    "name": "SIN",
+    "signatures": [
+      [
+        "INTEGER"
+      ],
+      [
+        "DOUBLE"
+      ]
+    ]
+  },
+  {
+    "name": "XOR",
+    "signatures": [
+      [
+        "BOOLEAN",
+        "BOOLEAN"
+      ]
+    ]
+  },
+  {
+    "name": "MONTH_OF_YEAR",
+    "signatures": [
+      [
+        "DATE"
+      ],
+      [
+        "TIME"
+      ],
+      [
+        "TIMESTAMP"
+      ],
+      [
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "YEAR",
+    "signatures": [
+      [
+        "DATE"
+      ],
+      [
+        "TIME"
+      ],
+      [
+        "TIMESTAMP"
+      ],
+      [
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "MONTHNAME",
+    "signatures": [
+      [
+        "DATE"
+      ],
+      [
+        "TIMESTAMP"
+      ],
+      [
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "CONV",
+    "signatures": [
+      [
+        "STRING",
+        "INTEGER",
+        "INTEGER"
+      ],
+      [
+        "INTEGER",
+        "INTEGER",
+        "INTEGER"
+      ]
+    ]
+  },
+  {
+    "name": "DAYOFWEEK",
+    "signatures": [
+      [
+        "DATE"
+      ],
+      [
+        "TIME"
+      ],
+      [
+        "TIMESTAMP"
+      ],
+      [
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "REGEXP",
+    "signatures": [
+      [
+        "STRING",
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "CIDRMATCH",
+    "signatures": [
+      [
+        "STRING",
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "GREATER",
+    "signatures": [
+      [
+        "COMPARABLE_TYPE",
+        "COMPARABLE_TYPE"
+      ]
+    ]
+  },
+  {
+    "name": "LESS",
+    "signatures": [
+      [
+        "COMPARABLE_TYPE",
+        "COMPARABLE_TYPE"
+      ]
+    ]
+  },
+  {
+    "name": "INTERNAL_REGEXP_REPLACE_3",
+    "signatures": [
+      [
+        "STRING",
+        "STRING",
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "STRCMP",
+    "signatures": [
+      [
+        "STRING",
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "RAND",
+    "signatures": [
+      [
+        "INTEGER"
+      ],
+      [
+        "DOUBLE"
+      ]
+    ]
+  },
+  {
+    "name": "FROM_UNIXTIME",
+    "signatures": [
+      [
+        "INTEGER"
+      ],
+      [
+        "DOUBLE"
+      ],
+      [
+        "INTEGER",
+        "STRING"
+      ],
+      [
+        "DOUBLE",
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "WEEK",
+    "signatures": [
+      [
+        "DATE"
+      ],
+      [
+        "TIME"
+      ],
+      [
+        "TIMESTAMP"
+      ],
+      [
+        "STRING"
+      ],
+      [
+        "STRING",
+        "INTEGER"
+      ],
+      [
+        "DATE",
+        "INTEGER"
+      ],
+      [
+        "TIME",
+        "INTEGER"
+      ],
+      [
+        "TIMESTAMP",
+        "INTEGER"
+      ]
+    ]
+  },
+  {
+    "name": "LOWER",
+    "signatures": [
+      [
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "ATAN",
+    "signatures": [
+      [
+        "INTEGER"
+      ],
+      [
+        "DOUBLE"
+      ],
+      [
+        "INTEGER",
+        "INTEGER"
+      ],
+      [
+        "INTEGER",
+        "DOUBLE"
+      ],
+      [
+        "DOUBLE",
+        "INTEGER"
+      ],
+      [
+        "DOUBLE",
+        "DOUBLE"
+      ]
+    ]
+  },
+  {
+    "name": "WEEK_OF_YEAR",
+    "signatures": [
+      [
+        "DATE"
+      ],
+      [
+        "TIME"
+      ],
+      [
+        "TIMESTAMP"
+      ],
+      [
+        "STRING"
+      ],
+      [
+        "STRING",
+        "INTEGER"
+      ],
+      [
+        "DATE",
+        "INTEGER"
+      ],
+      [
+        "TIME",
+        "INTEGER"
+      ],
+      [
+        "TIMESTAMP",
+        "INTEGER"
+      ]
+    ]
+  },
+  {
+    "name": "PERIOD_ADD",
+    "signatures": [
+      [
+        "INTEGER",
+        "INTEGER"
+      ]
+    ]
+  },
+  {
+    "name": "INTERNAL_ITEM",
+    "signatures": [
+      [
+        "ARRAY",
+        "INTEGER"
+      ],
+      [
+        "STRUCT",
+        "ANY"
+      ]
+    ]
+  },
+  {
+    "name": "DATE_FORMAT",
+    "signatures": [
+      [
+        "DATE",
+        "STRING"
+      ],
+      [
+        "TIME",
+        "STRING"
+      ],
+      [
+        "TIMESTAMP",
+        "STRING"
+      ],
+      [
+        "STRING",
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "SQRT",
+    "signatures": [
+      [
+        "INTEGER"
+      ],
+      [
+        "DOUBLE"
+      ]
+    ]
+  },
+  {
+    "name": "EARLIEST",
+    "signatures": [
+      [
+        "STRING",
+        "TIMESTAMP"
+      ]
+    ]
+  },
+  {
+    "name": "DAYOFMONTH",
+    "signatures": [
+      [
+        "DATE"
+      ],
+      [
+        "TIME"
+      ],
+      [
+        "TIMESTAMP"
+      ],
+      [
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "DEGREES",
+    "signatures": [
+      [
+        "INTEGER"
+      ],
+      [
+        "DOUBLE"
+      ]
+    ]
+  },
+  {
+    "name": "SECOND_OF_MINUTE",
+    "signatures": [
+      [
+        "DATE"
+      ],
+      [
+        "TIME"
+      ],
+      [
+        "TIMESTAMP"
+      ],
+      [
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "IS_EMPTY",
+    "signatures": [
+      [
+        "ANY"
+      ]
+    ]
+  },
+  {
+    "name": "STR_TO_DATE",
+    "signatures": [
+      [
+        "STRING",
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "DAY_OF_MONTH",
+    "signatures": [
+      [
+        "DATE"
+      ],
+      [
+        "TIME"
+      ],
+      [
+        "TIMESTAMP"
+      ],
+      [
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "TIME_FORMAT",
+    "signatures": [
+      [
+        "DATE",
+        "STRING"
+      ],
+      [
+        "TIME",
+        "STRING"
+      ],
+      [
+        "TIMESTAMP",
+        "STRING"
+      ],
+      [
+        "STRING",
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "JSON_ARRAY_LENGTH",
+    "signatures": [
+      [
+        "STRING"
+      ]
+    ]
+  },
+  {
+    "name": "OR",
+    "signatures": [
+      [
+        "BOOLEAN",
+        "BOOLEAN"
+      ]
+    ]
+  },
+  {
+    "name": "RADIANS",
+    "signatures": [
+      [
+        "INTEGER"
+      ],
+      [
+        "DOUBLE"
+      ]
+    ]
+  }
+]

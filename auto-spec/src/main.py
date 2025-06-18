@@ -54,7 +54,7 @@ async def main():
     try:
         futures = [
             asyncio.create_task(do_test_capturing_result(os_adaptor))
-            for _ in range(1000)
+            for _ in range(100)
         ]
         total = 0
         for future in tqdm.tqdm(asyncio.as_completed(futures), total=len(futures)):

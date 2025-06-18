@@ -1,0 +1,17 @@
+[group]
+name = "eval"
+description = '''
+Simple statements involving the PPL `eval` command with functions.
+'''
+
+[[queries]]
+lang = "ppl"
+content = "source = {{index}} | eval result {{fun}}({{col}}) | fields result"
+
+[[queries]]
+lang = "ppl"
+content = "source = {{index}} | eval result {{fun}}({{col}}, {{col}}) | fields result"
+
+[[queries]]
+lang = "ppl"
+content = "source = {{index}} | eval result {{fun}}({{col}}, {{col}}, {{col}}) | fields result"
