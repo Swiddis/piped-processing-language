@@ -1,9 +1,10 @@
 import asyncio
+import copy
 from collections import defaultdict
 from contextlib import asynccontextmanager
 
 from adaptors import QueryableAdaptor
-from data_generation.index import OpenSearchIndex, generate_index
+from data_generation.index import OpenSearchIndex, generate_index, index_name
 
 # Enables a per-adaptor limit on the number of contexts that can exist at once. This helps avoid
 # runaway resource usage by trying to run thousand of tests at once.
@@ -20,11 +21,13 @@ class QueryContext:
 
 
 @asynccontextmanager
-async def context(adaptor: QueryableAdaptor):
+async def context(adaptor: QueryableAdaptor, index: OpenSearchIndex):
+    local_index = copy.copy(index) # Allow multiple contexts for the same index to exist in parallel
+    local_index.name = index_name()
+
     async with _context_pool[id(adaptor)]:
-        index = generate_index()
-        await adaptor.create_index(index)
+        await adaptor.create_index(local_index)
         try:
-            yield QueryContext(adaptor, index)
+            yield QueryContext(adaptor, local_index)
         finally:
-            await adaptor.cleanup_index(index)
+            await adaptor.cleanup_index(local_index)

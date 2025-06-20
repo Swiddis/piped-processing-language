@@ -3,12 +3,15 @@ from beartype.claw import beartype_package
 
 from data_generation.data import OPENSEARCH_DATA_TYPES
 from data_generation.index import generate_index
+from query_cases import TestCase
 
 beartype_package("src")
 
 import asyncio
 import json
+import os
 import sys
+import tomllib
 import typing
 
 import tqdm
@@ -35,36 +38,45 @@ def expect_result_data(result: dict, data: list[list[typing.Any]]):
     ), f"incorrect data: {result}, expected {data}"
 
 
-async def do_test(client: AsyncOpenSearch):
-    async with context(client) as ctx:
-        query = f"source = {ctx.index.name} | stats count();"
+async def do_test(client: AsyncOpenSearch, test_case: TestCase):
+    async with context(client, test_case.index()) as ctx:
+        query = test_case.query.replace("$INDEX", ctx.index.name)
         result = await ctx.run_query(query)
 
-        expect_result_types(result, ["int"])
-        expect_result_data(result, [[len(ctx.index.documents)]])
+        with open('output.json', 'a') as fp:
+            fp.write(json.dumps(result) + "\n")
 
 
-async def do_test_capturing_result(client: AsyncOpenSearch):
+async def do_test_capturing_result(client: AsyncOpenSearch, test_case: TestCase):
     try:
-        await do_test(client)
+        await do_test(client, test_case)
         return True
-    except AssertionError as err:
+    except Exception as err:
         with open("err.log", "a") as fp:
             fp.write(repr(err) + "\n")
         return False
+
+
+def load_tests():
+    for dirpath, _, filenames in os.walk('src/query_cases/cases'):
+        for filename in filenames:
+            if not filename.endswith('.json'):
+                continue
+            with open(os.path.join(dirpath, filename), 'r') as fp:
+                yield TestCase.from_case_dict(json.load(fp))
 
 
 async def main_run_tests():
     os_adaptor = opensearch()
     try:
         futures = [
-            asyncio.create_task(do_test_capturing_result(os_adaptor))
-            for _ in range(100)
+            asyncio.create_task(do_test_capturing_result(os_adaptor, test_case))
+            for test_case in load_tests()
         ]
         total = 0
         for future in tqdm.tqdm(asyncio.as_completed(futures), total=len(futures)):
             total += int(await future)
-        print("Count queries:", total, "/", len(futures))
+        print("Successful Queries:", total, "/", len(futures))
     finally:
         await os_adaptor.close()
 
@@ -85,14 +97,8 @@ def build_case_from(function, signature, sig_idx):
         },
     }
 
-    as_toml_table = lambda o: json.dumps(o, separators=(', ', ' = '))
-    with open(f'src/query_cases/cases/{function['name']}_{sig_idx}.toml', 'w') as fp:
-        fp.write("[data]\n")
-        fp.write(f"mapping = {as_toml_table(case['data']['mapping'])}\n")
-        fp.write(f"documents = [\n")
-        for doc in case['data']['documents']:
-            fp.write('\t' + as_toml_table(doc) + ',\n')
-        fp.write(f']\n\n[query]\nlanguage = "ppl"\nquery = {json.dumps(case['query']['query'])}\n')
+    with open(f'src/query_cases/cases/{function['name']}_{sig_idx}.json', 'w') as fp:
+        json.dump(case, fp, indent=4)
 
 
 def main_generate_tests():
