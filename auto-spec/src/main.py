@@ -11,14 +11,14 @@ import asyncio
 import json
 import os
 import sys
-import tomllib
 import typing
 
 import tqdm
-from opensearchpy import AsyncOpenSearch
+from opensearchpy import AsyncOpenSearch, OpenSearchException
 
 from adaptors.context import context
 from adaptors.opensearch import OpenSearchAdaptor
+from report import generate_html_report
 
 
 def opensearch() -> OpenSearchAdaptor:
@@ -41,20 +41,23 @@ def expect_result_data(result: dict, data: list[list[typing.Any]]):
 async def do_test(client: AsyncOpenSearch, test_case: TestCase):
     async with context(client, test_case.index()) as ctx:
         query = test_case.query.replace("$INDEX", ctx.index.name)
-        result = await ctx.run_query(query)
-
-        with open('output.json', 'a') as fp:
-            fp.write(json.dumps(result) + "\n")
+        return await ctx.run_query(query)
 
 
 async def do_test_capturing_result(client: AsyncOpenSearch, test_case: TestCase):
+    result = { "case": test_case }
     try:
-        await do_test(client, test_case)
-        return True
-    except Exception as err:
-        with open("err.log", "a") as fp:
-            fp.write(repr(err) + "\n")
-        return False
+        result["body"] = await do_test(client, test_case)
+        result["result"] = "Success"
+    except OpenSearchException as err:
+        result["result"] = "Failure"
+        result["err"] = str(err)
+        result["err_source"] = "opensearch"
+    except AssertionError as err:
+        result["result"] = "Failure"
+        result["err"] = str(err)
+        result["err_source"] = "assertion"
+    return result
 
 
 def load_tests():
@@ -63,7 +66,7 @@ def load_tests():
             if not filename.endswith('.json'):
                 continue
             with open(os.path.join(dirpath, filename), 'r') as fp:
-                yield TestCase.from_case_dict(json.load(fp))
+                yield TestCase.from_case_dict(filename, json.load(fp))
 
 
 async def main_run_tests():
@@ -73,10 +76,11 @@ async def main_run_tests():
             asyncio.create_task(do_test_capturing_result(os_adaptor, test_case))
             for test_case in load_tests()
         ]
-        total = 0
-        for future in tqdm.tqdm(asyncio.as_completed(futures), total=len(futures)):
-            total += int(await future)
-        print("Successful Queries:", total, "/", len(futures))
+        results = []
+        for future in tqdm.tqdm(futures, total=len(futures)):
+            result = await future
+            results.append(result)
+        generate_html_report(results)
     finally:
         await os_adaptor.close()
 
