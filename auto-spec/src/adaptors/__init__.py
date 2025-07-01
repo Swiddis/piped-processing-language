@@ -18,8 +18,6 @@ class QueryableAdaptor(ABC):
 
     @abstractmethod
     async def run_query(self, query: str) -> QueryResponse:
-        # TODO define a format that works for both spark and SQL plugin
-        # We probably can't just rely on JDBC everywhere
         pass
 
     @abstractmethod

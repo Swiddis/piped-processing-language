@@ -1,3 +1,5 @@
+from requests import HTTPError
+from adaptors.spark import SparkAdaptor
 from data_generation.data import OPENSEARCH_DATA_TYPES
 from data_generation.index import generate_index
 from query_cases import TestCase
@@ -52,6 +54,10 @@ async def do_test_capturing_result(client: AsyncOpenSearch, test_case: TestCase)
         result["result"] = "Failure"
         result["err"] = str(err)
         result["err_source"] = "assertion"
+    except HTTPError as err:
+        result["result"] = "Failure"
+        result["err"] = err.response.text
+        result["err_source"] = "assertion"
     return result
 
 
@@ -65,7 +71,7 @@ def load_tests():
 
 
 async def main_run_tests():
-    os_adaptor = opensearch()
+    os_adaptor = SparkAdaptor()
     try:
         futures = [
             asyncio.create_task(do_test_capturing_result(os_adaptor, test_case))
