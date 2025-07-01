@@ -1,6 +1,6 @@
 from adaptors import QueryableAdaptor
 from model import OpenSearchColumn, OpenSearchIndex, QueryResponse
-import requests
+import httpx
 
 OS_TO_SPARK_TYPES =  {
     "keyword": "string",
@@ -27,8 +27,9 @@ SPARK_TO_OS_TYPES = {
 
 
 class SparkAdaptor(QueryableAdaptor):
-    def __init__(self, url: str = "http://localhost:5000"):
+    def __init__(self, client: httpx.AsyncClient, url: str = "http://localhost:5000"):
         self.url = url
+        self.client = client
 
     async def create_index(self, index: OpenSearchIndex):
         schema = {
@@ -36,7 +37,7 @@ class SparkAdaptor(QueryableAdaptor):
             for col in index.columns
         }
         
-        response = requests.post(
+        response = await self.client.post(
             f"{self.url}/load",
             json={
                 "table": index.name,
@@ -47,14 +48,14 @@ class SparkAdaptor(QueryableAdaptor):
         response.raise_for_status()
 
     async def cleanup_index(self, index: OpenSearchIndex):
-        response = requests.post(
+        response = await self.client.post(
             f"{self.url}/drop",
             json={"table": index.name}
         )
         response.raise_for_status()
 
     async def run_query(self, query: str) -> QueryResponse:
-        response = requests.post(
+        response = await self.client.post(
             f"{self.url}/query",
             json={"query": query}
         )
@@ -72,4 +73,4 @@ class SparkAdaptor(QueryableAdaptor):
         )
 
     async def close(self):
-        pass
+        await self.client.aclose()

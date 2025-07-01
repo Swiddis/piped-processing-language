@@ -35,7 +35,8 @@
         "string",
         "integer"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "DAYOFYEAR",
@@ -53,7 +54,8 @@
       [
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "MINUTE_OF_DAY",
@@ -68,7 +70,8 @@
       [
         "timestamp"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "LATEST",
@@ -78,7 +81,8 @@
         "string",
         "timestamp"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "MODULUS",
@@ -100,7 +104,8 @@
         "double",
         "double"
       ]
-    ]
+    ],
+    "inline": true
   },
   {
     "name": "SUBTIME",
@@ -170,7 +175,8 @@
         "string",
         "timestamp"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "HOUR",
@@ -188,7 +194,8 @@
       [
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "IS_BLANK",
@@ -197,7 +204,8 @@
       [
         "any"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "SEC_TO_TIME",
@@ -209,7 +217,8 @@
       [
         "double"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "YEARWEEK",
@@ -243,7 +252,8 @@
         "timestamp",
         "integer"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "ABS",
@@ -258,7 +268,8 @@
       [
         "any"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "TIMESTAMPADD",
@@ -284,7 +295,8 @@
         "integer",
         "timestamp"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "COS",
@@ -296,7 +308,8 @@
       [
         "double"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "TIME",
@@ -314,7 +327,8 @@
       [
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "TRIM",
@@ -323,7 +337,8 @@
       [
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "MINUTE",
@@ -341,7 +356,8 @@
       [
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "POW",
@@ -363,7 +379,8 @@
         "double",
         "double"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "ADDTIME",
@@ -433,7 +450,8 @@
         "string",
         "timestamp"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "CBRT",
@@ -445,7 +463,8 @@
       [
         "double"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "UPPER",
@@ -454,7 +473,8 @@
       [
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "FROM_DAYS",
@@ -463,7 +483,8 @@
       [
         "integer"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "SHA2",
@@ -473,7 +494,8 @@
         "string",
         "integer"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "INTERNAL_PATTERN_PARSER",
@@ -491,7 +513,8 @@
         "string",
         "array"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "WEEKDAY",
@@ -521,7 +544,8 @@
         "timestamp",
         "integer"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "DATE_SUB",
@@ -543,7 +567,8 @@
         "string",
         "any"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "LOG",
@@ -571,7 +596,8 @@
       [
         "double"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "TIMEDIFF",
@@ -641,7 +667,8 @@
         "string",
         "timestamp"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "DAY",
@@ -659,7 +686,8 @@
       [
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "EXP",
@@ -671,7 +699,8 @@
       [
         "double"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "MAKETIME",
@@ -717,7 +746,8 @@
         "double",
         "double"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "SPAN",
@@ -748,7 +778,8 @@
         "integer",
         "any"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "ARRAY_LENGTH",
@@ -757,7 +788,8 @@
       [
         "array"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "MULTIPLY",
@@ -795,7 +827,8 @@
         "double",
         "any"
       ]
-    ]
+    ],
+    "inline": true
   },
   {
     "name": "DATE",
@@ -810,7 +843,8 @@
       [
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "IS_PRESENT",
@@ -819,7 +853,8 @@
       [
         "any"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "MODULUSFUNCTION",
@@ -841,7 +876,8 @@
         "double",
         "double"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "DATEDIFF",
@@ -911,7 +947,8 @@
         "string",
         "timestamp"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "TIMESTAMP",
@@ -993,7 +1030,8 @@
         "timestamp",
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "RTRIM",
@@ -1002,7 +1040,8 @@
       [
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "SUBSTR",
@@ -1017,7 +1056,8 @@
         "integer",
         "integer"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "POWER",
@@ -1039,7 +1079,8 @@
         "double",
         "double"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "TYPEOF",
@@ -1048,7 +1089,8 @@
       [
         "any"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "HOUR_OF_DAY",
@@ -1066,7 +1108,8 @@
       [
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "CRC32",
@@ -1075,7 +1118,8 @@
       [
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "DATETIME",
@@ -1095,7 +1139,8 @@
       [
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "SUBDATE",
@@ -1133,7 +1178,8 @@
         "string",
         "integer"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "SUBSTRING",
@@ -1148,7 +1194,8 @@
         "integer",
         "integer"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "TIMESTAMPDIFF",
@@ -1234,7 +1281,8 @@
         "string",
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "IS_NULL",
@@ -1243,7 +1291,8 @@
       [
         "any"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "UNIX_TIMESTAMP",
@@ -1264,7 +1313,8 @@
       [
         "double"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "REPLACE",
@@ -1275,7 +1325,8 @@
         "string",
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "MICROSECOND",
@@ -1293,7 +1344,8 @@
       [
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "NOTEQUAL",
@@ -1303,7 +1355,8 @@
         "comparable_type",
         "comparable_type"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "INTERNAL_GROK",
@@ -1313,7 +1366,8 @@
         "string",
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "SYSDATE",
@@ -1322,7 +1376,8 @@
       [
         "integer"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "TO_SECONDS",
@@ -1343,7 +1398,8 @@
       [
         "integer"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "LOG2",
@@ -1355,7 +1411,8 @@
       [
         "double"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "EXTRACT",
@@ -1377,7 +1434,8 @@
         "string",
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "EQUAL",
@@ -1387,7 +1445,8 @@
         "comparable_type",
         "comparable_type"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "DAY_OF_WEEK",
@@ -1405,7 +1464,8 @@
       [
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "LOG10",
@@ -1417,7 +1477,8 @@
       [
         "double"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "LTE",
@@ -1427,7 +1488,8 @@
         "comparable_type",
         "comparable_type"
       ]
-    ]
+    ],
+    "inline": true
   },
   {
     "name": "IF",
@@ -1438,7 +1500,8 @@
         "any",
         "any"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "MAKEDATE",
@@ -1460,7 +1523,8 @@
         "double",
         "double"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "LENGTH",
@@ -1469,7 +1533,8 @@
       [
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "SIGN",
@@ -1481,7 +1546,8 @@
       [
         "double"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "GET_FORMAT",
@@ -1491,7 +1557,8 @@
         "string",
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "DAYNAME",
@@ -1506,7 +1573,8 @@
       [
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "NULLIF",
@@ -1516,7 +1584,8 @@
         "comparable_type",
         "comparable_type"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "INTERNAL_REGEXP_EXTRACT",
@@ -1537,7 +1606,8 @@
         "integer",
         "integer"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "DAY_OF_YEAR",
@@ -1555,7 +1625,8 @@
       [
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "SECOND",
@@ -1573,7 +1644,8 @@
       [
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "GTE",
@@ -1583,7 +1655,8 @@
         "comparable_type",
         "comparable_type"
       ]
-    ]
+    ],
+    "inline": true
   },
   {
     "name": "IS_NOT_NULL",
@@ -1592,7 +1665,8 @@
       [
         "any"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "DIVIDE",
@@ -1614,7 +1688,8 @@
         "double",
         "double"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "CONVERT_TZ",
@@ -1640,7 +1715,8 @@
         "string",
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "TIME_TO_SEC",
@@ -1658,7 +1734,8 @@
       [
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "LN",
@@ -1670,7 +1747,8 @@
       [
         "double"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "PERIOD_DIFF",
@@ -1680,7 +1758,8 @@
         "integer",
         "integer"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "ASCII",
@@ -1689,7 +1768,8 @@
       [
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "AND",
@@ -1699,7 +1779,8 @@
         "boolean",
         "boolean"
       ]
-    ]
+    ],
+    "inline": true
   },
   {
     "name": "JSON_VALID",
@@ -1708,7 +1789,8 @@
       [
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "WEEKOFYEAR",
@@ -1742,7 +1824,8 @@
         "timestamp",
         "integer"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "ATAN2",
@@ -1764,7 +1847,8 @@
         "double",
         "double"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "LTRIM",
@@ -1773,7 +1857,8 @@
       [
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "ASIN",
@@ -1785,7 +1870,8 @@
       [
         "double"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "MOD",
@@ -1807,7 +1893,8 @@
         "double",
         "double"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "REVERSE",
@@ -1816,7 +1903,8 @@
       [
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "QUARTER",
@@ -1834,7 +1922,8 @@
       [
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "ACOS",
@@ -1846,7 +1935,8 @@
       [
         "double"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "DATE_ADD",
@@ -1868,7 +1958,8 @@
         "string",
         "any"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "MONTH",
@@ -1886,7 +1977,8 @@
       [
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "LAST_DAY",
@@ -1904,7 +1996,8 @@
       [
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "COT",
@@ -1916,7 +2009,8 @@
       [
         "double"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "MINUTE_OF_HOUR",
@@ -1934,7 +2028,8 @@
       [
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "NOT",
@@ -1943,7 +2038,8 @@
       [
         "boolean"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "SIN",
@@ -1955,7 +2051,8 @@
       [
         "double"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "XOR",
@@ -1965,7 +2062,8 @@
         "boolean",
         "boolean"
       ]
-    ]
+    ],
+    "inline": true
   },
   {
     "name": "MONTH_OF_YEAR",
@@ -1983,7 +2081,8 @@
       [
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "YEAR",
@@ -2001,7 +2100,8 @@
       [
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "MONTHNAME",
@@ -2016,7 +2116,8 @@
       [
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "CONV",
@@ -2032,7 +2133,8 @@
         "integer",
         "integer"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "DAYOFWEEK",
@@ -2050,7 +2152,8 @@
       [
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "REGEXP",
@@ -2060,7 +2163,8 @@
         "string",
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "CIDRMATCH",
@@ -2070,7 +2174,8 @@
         "string",
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "GREATER",
@@ -2080,7 +2185,8 @@
         "comparable_type",
         "comparable_type"
       ]
-    ]
+    ],
+    "inline": true
   },
   {
     "name": "LESS",
@@ -2090,7 +2196,8 @@
         "comparable_type",
         "comparable_type"
       ]
-    ]
+    ],
+    "inline": true
   },
   {
     "name": "INTERNAL_REGEXP_REPLACE_3",
@@ -2101,7 +2208,8 @@
         "string",
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "STRCMP",
@@ -2111,7 +2219,8 @@
         "string",
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "RAND",
@@ -2123,7 +2232,8 @@
       [
         "double"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "FROM_UNIXTIME",
@@ -2143,7 +2253,8 @@
         "double",
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "WEEK",
@@ -2177,7 +2288,8 @@
         "timestamp",
         "integer"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "LOWER",
@@ -2186,7 +2298,8 @@
       [
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "ATAN",
@@ -2214,7 +2327,8 @@
         "double",
         "double"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "WEEK_OF_YEAR",
@@ -2248,7 +2362,8 @@
         "timestamp",
         "integer"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "PERIOD_ADD",
@@ -2258,7 +2373,8 @@
         "integer",
         "integer"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "INTERNAL_ITEM",
@@ -2272,7 +2388,8 @@
         "struct",
         "any"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "DATE_FORMAT",
@@ -2294,7 +2411,8 @@
         "string",
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "SQRT",
@@ -2306,7 +2424,8 @@
       [
         "double"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "EARLIEST",
@@ -2316,7 +2435,8 @@
         "string",
         "timestamp"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "DAYOFMONTH",
@@ -2334,7 +2454,8 @@
       [
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "DEGREES",
@@ -2346,7 +2467,8 @@
       [
         "double"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "SECOND_OF_MINUTE",
@@ -2364,7 +2486,8 @@
       [
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "IS_EMPTY",
@@ -2373,7 +2496,8 @@
       [
         "any"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "STR_TO_DATE",
@@ -2383,7 +2507,8 @@
         "string",
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "DAY_OF_MONTH",
@@ -2401,7 +2526,8 @@
       [
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "TIME_FORMAT",
@@ -2423,7 +2549,8 @@
         "string",
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "JSON_ARRAY_LENGTH",
@@ -2432,7 +2559,8 @@
       [
         "string"
       ]
-    ]
+    ],
+    "inline": false
   },
   {
     "name": "OR",
@@ -2442,7 +2570,8 @@
         "boolean",
         "boolean"
       ]
-    ]
+    ],
+    "inline": true
   },
   {
     "name": "RADIANS",
@@ -2454,6 +2583,7 @@
       [
         "double"
       ]
-    ]
+    ],
+    "inline": false
   }
 ]

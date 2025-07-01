@@ -1,7 +1,12 @@
 import re
 import json
 
+def load_inline():
+    with open('scripts/input_data/inline_functions.txt', 'r') as fp:
+        return fp.read().splitlines()
+
 def load_function_registry(registry):
+    inline = load_inline()
     functions, skipped = [], []
     with open(registry, 'r') as fp:
         lines = fp.read().splitlines()
@@ -27,8 +32,8 @@ def load_function_registry(registry):
             else:
                 functions.append(curr_fun_data)
             curr_fun = line
-            curr_fun_data = { 'name': line, 'str': line, 'signatures': [] }
-    
+            curr_fun_data = { 'name': line, 'str': line, 'signatures': [], 'inline': line in inline }
+
     return functions, skipped
 
 if __name__ == "__main__":

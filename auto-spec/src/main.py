@@ -1,4 +1,5 @@
-from requests import HTTPError
+import httpx
+from httpx import HTTPError
 from adaptors.spark import SparkAdaptor
 from data_generation.data import OPENSEARCH_DATA_TYPES
 from data_generation.index import generate_index
@@ -71,7 +72,8 @@ def load_tests():
 
 
 async def main_run_tests():
-    os_adaptor = SparkAdaptor()
+    os_adaptor = SparkAdaptor(httpx.AsyncClient())
+    # os_adaptor = opensearch()
     try:
         futures = [
             asyncio.create_task(do_test_capturing_result(os_adaptor, test_case))
@@ -91,6 +93,12 @@ def build_case_from(function, signature, sig_idx):
     if not all(s in OPENSEARCH_DATA_TYPES for s in signature):
         return
     index = generate_index(column_types=signature)
+    if function['inline']:
+        insert = f' {function['str'].upper()} '
+        query = f"source = $INDEX | eval result = ({insert.join(col.name for col in index.columns)}) | fields result"
+    else:
+        query = f"source = $INDEX | eval result = {function['str']}({', '.join(col.name for col in index.columns)}) | fields result"
+
     case = {
         "data": {
             "mapping": {col.name: col.dtype for col in index.columns},
@@ -98,7 +106,7 @@ def build_case_from(function, signature, sig_idx):
         },
         "query": {
             "language": "ppl",
-            "query": f"source = $INDEX | eval result = {function['str']}({', '.join(col.name for col in index.columns)}) | fields result",
+            "query": query,
         },
     }
 
