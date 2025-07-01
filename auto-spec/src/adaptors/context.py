@@ -4,7 +4,7 @@ from collections import defaultdict
 from contextlib import asynccontextmanager
 
 from adaptors import QueryableAdaptor
-from data_generation.index import OpenSearchIndex, generate_index, index_name
+from data_generation.index import OpenSearchIndex, index_name
 
 # Enables a per-adaptor limit on the number of contexts that can exist at once. This helps avoid
 # runaway resource usage by trying to run thousand of tests at once.

@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 
-from data_generation.index import OpenSearchColumn, OpenSearchIndex, index_name
+from model import OpenSearchColumn, OpenSearchIndex
+from data_generation.index import index_name
 
 
 @dataclass(init=True)

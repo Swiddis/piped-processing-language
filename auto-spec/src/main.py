@@ -1,11 +1,6 @@
-# Enable type checking
-from beartype.claw import beartype_package
-
 from data_generation.data import OPENSEARCH_DATA_TYPES
 from data_generation.index import generate_index
 from query_cases import TestCase
-
-beartype_package("src")
 
 import asyncio
 import json
@@ -47,7 +42,7 @@ async def do_test(client: AsyncOpenSearch, test_case: TestCase):
 async def do_test_capturing_result(client: AsyncOpenSearch, test_case: TestCase):
     result = { "case": test_case }
     try:
-        result["body"] = await do_test(client, test_case)
+        result["body"] = (await do_test(client, test_case)).dict()
         result["result"] = "Success"
     except OpenSearchException as err:
         result["result"] = "Failure"

@@ -1,38 +1,9 @@
 import random
 import uuid
-from dataclasses import dataclass
 
-from opensearchpy import AsyncOpenSearch
 
+from model import OpenSearchIndex, OpenSearchColumn
 from data_generation.data import OPENSEARCH_DATA_TYPES, gen_column_name
-
-
-@dataclass(init=True)
-class OpenSearchColumn:
-    name: str
-    dtype: str
-
-    def mapping_obj(self):
-        return {"type": self.dtype}
-
-
-@dataclass(init=True)
-class OpenSearchIndex:
-    name: str
-    columns: list[OpenSearchColumn]
-    documents: list[dict]
-
-    def mapping(self):
-        properties = {c.name: c.mapping_obj() for c in self.columns}
-        return {
-            "settings": {
-                "index": {
-                    "number_of_shards": 1,
-                    "number_of_replicas": 0,
-                }
-            },
-            "mappings": {"properties": properties},
-        }
 
 
 def index_name():

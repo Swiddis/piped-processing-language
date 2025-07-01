@@ -1,7 +1,6 @@
-import typing
 from abc import ABC, abstractmethod
 
-from data_generation.index import OpenSearchIndex
+from model import OpenSearchIndex, QueryResponse
 
 
 class QueryableAdaptor(ABC):
@@ -18,7 +17,7 @@ class QueryableAdaptor(ABC):
         pass
 
     @abstractmethod
-    async def run_query(self, query: str) -> dict[str, typing.Any]:
+    async def run_query(self, query: str) -> QueryResponse:
         # TODO define a format that works for both spark and SQL plugin
         # We probably can't just rely on JDBC everywhere
         pass

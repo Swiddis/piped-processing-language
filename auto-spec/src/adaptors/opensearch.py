@@ -4,7 +4,7 @@ import json
 from opensearchpy import AsyncOpenSearch
 
 from adaptors import QueryableAdaptor
-from data_generation.index import OpenSearchIndex
+from model import OpenSearchIndex, QueryResponse, OpenSearchColumn
 
 
 class OpenSearchAdaptor(QueryableAdaptor):
@@ -39,11 +39,17 @@ class OpenSearchAdaptor(QueryableAdaptor):
         async with self.request_sem:
             await self.client.indices.delete(index.name, params={"timeout": 120})
 
-    async def run_query(self, query: str):
+    async def run_query(self, query: str) -> QueryResponse:
         async with self.request_sem:
-            return await self.client.http.post(
+            response = await self.client.http.post(
                 "/_plugins/_ppl", body={"query": query}, params={"timeout": 120}
             )
+
+        columns = [OpenSearchColumn(s["name"], s["type"]) for s in response["schema"]]
+        return QueryResponse(
+            columns,
+            [{c.name: v for c, v in zip(columns, row)} for row in response["datarows"]],
+        )
 
     async def close(self):
         await self.client.close()
