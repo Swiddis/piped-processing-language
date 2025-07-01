@@ -27,6 +27,7 @@ def generate_html_report(results):
                 <thead>
                     <tr>
                         <th>Test Case</th>
+                        <th>Adaptor</th>
                         <th>Result</th>
                         <th>Details</th>
                     </tr>
@@ -43,6 +44,7 @@ def generate_html_report(results):
     row_template = """
     <tr class="{row_class}">
         <td class="col-md-2">{case_name}</td>
+        <td class="col-md-1">{case_adaptor}</td>
         <td class="col-md-1">{result}</td>
         <td>
             <div class="accordion" id="accordion_{case_id}">
@@ -98,7 +100,7 @@ def generate_html_report(results):
     rows = []
     success_count = 0
     
-    for i, result in enumerate(results):
+    for i, result in enumerate(sorted(results, key=lambda r: (r['case'].name, r['client']))):
         is_success = result["result"] == "Success"
         if is_success:
             success_count += 1
@@ -107,6 +109,7 @@ def generate_html_report(results):
             row_class="success" if is_success else "failure",
             case_id=i,
             case_name=result["case"].name,
+            case_adaptor=result["client"],
             case_data=json.dumps(result["case"].documents, indent=2),
             result=result["result"],
             query=result["case"].query,

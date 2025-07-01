@@ -5,8 +5,16 @@ from model import OpenSearchIndex, QueryResponse
 
 class QueryableAdaptor(ABC):
     """
-    Used to support testing queries on multiple runtimes
+    Used to support testing queries on multiple runtimes. One adaptor will be created per test suite
+    and will be `close`d at the end. The adaptor is responsible for enforcing any concurrency
+    limits, and for converting to/from the index and response types.
     """
+
+    def name(self):
+        """
+        Human-readable identifier for the adaptor, to be rendered in test reports.
+        """
+        return type(self).__name__.removesuffix('Adaptor')
 
     @abstractmethod
     async def create_index(self, index: OpenSearchIndex):

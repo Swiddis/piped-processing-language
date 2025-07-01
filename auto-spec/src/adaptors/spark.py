@@ -1,3 +1,4 @@
+import asyncio
 from adaptors import QueryableAdaptor
 from model import OpenSearchColumn, OpenSearchIndex, QueryResponse
 import httpx
@@ -30,6 +31,8 @@ class SparkAdaptor(QueryableAdaptor):
     def __init__(self, client: httpx.AsyncClient, url: str = "http://localhost:5000"):
         self.url = url
         self.client = client
+        # Concurrency limit.
+        self.request_sem = asyncio.Semaphore(24)
 
     async def create_index(self, index: OpenSearchIndex):
         schema = {
@@ -37,28 +40,31 @@ class SparkAdaptor(QueryableAdaptor):
             for col in index.columns
         }
         
-        response = await self.client.post(
-            f"{self.url}/load",
-            json={
-                "table": index.name,
-                "schema": schema,
-                "data": index.documents
-            }
-        )
+        async with self.request_sem:
+            response = await self.client.post(
+                f"{self.url}/load",
+                json={
+                    "table": index.name,
+                    "schema": schema,
+                    "data": index.documents
+                }
+            )
         response.raise_for_status()
 
     async def cleanup_index(self, index: OpenSearchIndex):
-        response = await self.client.post(
-            f"{self.url}/drop",
-            json={"table": index.name}
-        )
+        async with self.request_sem:
+            response = await self.client.post(
+                f"{self.url}/drop",
+                json={"table": index.name}
+            )
         response.raise_for_status()
 
     async def run_query(self, query: str) -> QueryResponse:
-        response = await self.client.post(
-            f"{self.url}/query",
-            json={"query": query}
-        )
+        async with self.request_sem:
+            response = await self.client.post(
+                f"{self.url}/query",
+                json={"query": query}
+            )
         response.raise_for_status()
         data = response.json()
         
