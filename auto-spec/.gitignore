@@ -1,7 +1,4 @@
-# Temporarily ignore this since it's a lot of output and still changes significantly every run
-src/query_cases/cases
-
-test_report.html
+test_report.jsonl
 
 # Clone source repositories for other test cases here.
 # Scripts in `scripts/` will use this directory to locate the tests.
