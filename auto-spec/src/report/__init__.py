@@ -1,133 +1,91 @@
 import json
+from collections import defaultdict
 
-# TODO make modular, break out subsections, all these wonderful things
-def generate_html_report(results):
-    html_template = """
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>Test Results Report</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <style>
-            .success {{ background-color: #d4edda; }}
-            .failure {{ background-color: #f8d7da; }}
-            pre {{ white-space: pre-wrap; word-wrap: break-word; max-height: 200px; overflow-y: auto; }}
-        </style>
-    </head>
-    <body>
-        <div class="container mt-4">
-            <h2>Test Results Summary</h2>
-            <p>
-                Successful Queries: {success_count} / {total_count}
-                ({success_percentage:.1f}%)
-            </p>
-            
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Test Case</th>
-                        <th>Adaptor</th>
-                        <th>Result</th>
-                        <th>Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {table_rows}
-                </tbody>
-            </table>
-        </div>
-    </body>
-    </html>
-    """
+def group_by_name(results):
+    grouped_by_name = defaultdict(lambda: [])
+    for result in results:
+        grouped_by_name[result['case']['name']].append(result)
+    for v in grouped_by_name.values():
+        v.sort(key=lambda x: x['client'])
+    return grouped_by_name
 
-    row_template = """
-    <tr class="{row_class}">
-        <td class="col-md-2">{case_name}</td>
-        <td class="col-md-1">{case_adaptor}</td>
-        <td class="col-md-1">{result}</td>
-        <td>
-            <div class="accordion" id="accordion_{case_id}">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" 
-                                data-bs-toggle="collapse" 
-                                data-bs-target="#query_{case_id}">
-                            Query
-                        </button>
-                    </h2>
-                    <div id="query_{case_id}" class="accordion-collapse collapse">
-                        <div class="accordion-body">
-                            <pre>{query}</pre>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" 
-                                data-bs-toggle="collapse" 
-                                data-bs-target="#data_{case_id}">
-                            Data
-                        </button>
-                    </h2>
-                    <div id="data_{case_id}" class="accordion-collapse collapse">
-                        <div class="accordion-body">
-                            <pre>{case_data}</pre>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" 
-                                data-bs-toggle="collapse" 
-                                data-bs-target="#response_{case_id}">
-                            {response_title}
-                        </button>
-                    </h2>
-                    <div id="response_{case_id}" class="accordion-collapse collapse">
-                        <div class="accordion-body">
-                            <pre>{response}</pre>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </td>
-    </tr>
-    """
+def build_comparative_report(results):
+    results = group_by_name(results)
+    for key, values in sorted(results.items()):
+        opensearch, spark = values[0], values[1]
+        os_success, spark_success = opensearch['result'] == 'Success', spark['result'] == 'Success'
+        if os_success and spark_success:
+            d_type_agree = opensearch['body']['columns'] == spark['body']['columns']
+            content_agree = opensearch['body']['rows'] == spark['body']['rows']
+            yield {
+                'key': key,
+                'tags': values[0]['case']['query']['tags'],
+                'opensearch': os_success,
+                'spark': spark_success,
+                'results_match': opensearch['result'] == spark['result'],
+                'dtype_match': d_type_agree,
+                'content_match': content_agree,
+            }
+        else:
+            yield {
+                'key': key,
+                'tags': values[0]['case']['query']['tags'],
+                'opensearch': os_success,
+                'spark': spark_success,
+                'results_match': opensearch['result'] == spark['result']
+            }
 
-    rows = []
-    success_count = 0
+
+def analyze_by_tag(comparative_results):
+    tag_stats = {}
     
-    for i, result in enumerate(sorted(results, key=lambda r: (r['case'].name, r['client']))):
-        is_success = result["result"] == "Success"
-        if is_success:
-            success_count += 1
+    for result in comparative_results:
+        for tag in result['tags']:
+            if tag not in tag_stats:
+                tag_stats[tag] = {
+                    'tag': tag,
+                    'total': 0,
+                    'opensearch_success': 0,
+                    'spark_success': 0,
+                    'results_match': 0,
+                    'dtype_match': 0,
+                    'content_match': 0
+                }
             
-        row = row_template.format(
-            row_class="success" if is_success else "failure",
-            case_id=i,
-            case_name=result["case"].name,
-            case_adaptor=result["client"],
-            case_data=json.dumps(result["case"].documents, indent=2),
-            result=result["result"],
-            query=result["case"].query,
-            response_title="Response" if is_success else "Error",
-            response=json.dumps(result["body"], indent=2) if is_success else 
-                    f"Error Source: {result.get('err_source', 'unknown')}\n{result.get('err', 'Unknown error')}"
-        )
-        rows.append(row)
+            stats = tag_stats[tag]
+            stats['total'] += 1
+            
+            if result['opensearch']:
+                stats['opensearch_success'] += 1
+            if result['spark']:
+                stats['spark_success'] += 1
+            if result['results_match']:
+                stats['results_match'] += 1
+            if 'dtype_match' in result and result['dtype_match']:
+                stats['dtype_match'] += 1
+            if 'content_match' in result and result['content_match']:
+                stats['content_match'] += 1
+    
+    for tag, stats in tag_stats.items():
+        total = stats['total']
+        for key in stats:
+            if isinstance(stats[key], str):
+                continue
+            if key != 'total':
+                stats[key] = (stats[key] / total) * 100
+                
+    return tag_stats
 
-    total_count = len(results)
-    success_percentage = (success_count / total_count * 100) if total_count > 0 else 0
 
-    html_content = html_template.format(
-        success_count=success_count,
-        total_count=total_count,
-        success_percentage=success_percentage,
-        table_rows="\n".join(rows),
-    )
+def generate_report(results):
+    raw_results = list(build_comparative_report(results))
+    tag_aggregate = analyze_by_tag(raw_results)
 
-    with open("test_report.html", "w") as f:
-        f.write(html_content)
+    with open('test_report.jsonl', 'w') as fp:
+        for v in sorted(tag_aggregate.values(), key=lambda x: x['tag']):
+            v['line_type'] = 'tag'
+            print(json.dumps(v), file=fp)
+        for v in sorted(raw_results, key=lambda x: x['key']):
+            v['line_type'] = 'query'
+            print(json.dumps(v), file=fp)

@@ -84,7 +84,7 @@ def build_mapping(df):
             mapping[column] = 'boolean'
         elif 'datetime' in dtype:
             mapping[column] = 'date'
-        elif 'object' in dtype or 'string' in dtype:
+        elif 'string' in dtype:
             if is_ip_field(df[column]):
                 mapping[column] = 'ip'
             else:
@@ -92,7 +92,7 @@ def build_mapping(df):
         elif 'array' in dtype or 'list' in dtype:
             # You might want to determine the array element type
             mapping[column] = 'array'
-        elif 'dict' in dtype or 'struct' in dtype:
+        elif 'dict' in dtype or 'struct' in dtype or 'object' in dtype:
             mapping[column] = 'object'
         else:
             mapping[column] = 'text'

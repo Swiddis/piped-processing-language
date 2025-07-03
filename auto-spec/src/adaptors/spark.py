@@ -23,7 +23,8 @@ SPARK_TO_OS_TYPES = {
     "float": "float",
     "boolean": "boolean",
     "date": "date",
-    "bigint": "long"
+    "bigint": "long",
+    "timestamp": "date"
 }
 
 

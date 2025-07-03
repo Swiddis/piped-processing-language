@@ -11,9 +11,11 @@ class TestCase:
     documents: list[dict]
     language: str
     query: str
+    tags: list[str]
 
     def to_case_dict(self):
         return {
+            "name": self.name,
             "data": {
                 "mapping": self.mapping,
                 "documents": self.documents,
@@ -21,6 +23,7 @@ class TestCase:
             "query": {
                 "language": self.language,
                 "query": self.query,
+                "tags": self.tags
             }
         }
 
@@ -31,6 +34,7 @@ class TestCase:
             case_dict["data"]["documents"],
             case_dict["query"]["language"],
             case_dict["query"]["query"],
+            case_dict["query"].get("tags", [])
         )
 
     def index(self):

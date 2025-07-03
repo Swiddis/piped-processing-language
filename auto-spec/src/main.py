@@ -17,7 +17,7 @@ from opensearchpy import AsyncOpenSearch, OpenSearchException
 
 from adaptors.context import context
 from adaptors.opensearch import OpenSearchAdaptor
-from report import generate_html_report
+from report import generate_report
 
 
 def opensearch() -> OpenSearchAdaptor:
@@ -44,7 +44,7 @@ async def do_test(client: AsyncOpenSearch, test_case: TestCase):
 
 
 async def do_test_capturing_result(client: QueryableAdaptor, test_case: TestCase):
-    result = {"case": test_case, "client": client.name()}
+    result = {"case": test_case.to_case_dict(), "client": client.name()}
     try:
         result["body"] = (await do_test(client, test_case)).dict()
         result["result"] = "Success"
@@ -58,12 +58,12 @@ async def do_test_capturing_result(client: QueryableAdaptor, test_case: TestCase
         result["err_source"] = "assertion"
     except HTTPError as err:
         result["result"] = "Failure"
-        result["err"] = err.response.text
+        result["err"] = json.loads(err.response.text)
         result["err_source"] = "http"
     return result
 
 
-def load_tests():
+def load_tests() -> typing.Generator[TestCase]:
     for dirpath, _, filenames in os.walk("src/query_cases/cases"):
         for filename in filenames:
             if not filename.endswith(".json"):
@@ -74,6 +74,8 @@ def load_tests():
 
 async def main_run_tests():
     tests = list(load_tests())
+    # Filter out JOIN queries as we don't currently have multi-index loading
+    tests = [t for t in tests if 'command:join' not in t.tags]
 
     spark_adaptor = SparkAdaptor(httpx.AsyncClient(timeout=60))
     os_adaptor = opensearch()
@@ -93,7 +95,7 @@ async def main_run_tests():
         ):
             result = await future
             results.append(result)
-        generate_html_report(results)
+        generate_report(results)
     finally:
         await os_adaptor.close()
         await spark_adaptor.close()
