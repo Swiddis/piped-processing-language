@@ -3,6 +3,10 @@ src/query_cases/cases
 
 test_report.html
 
+# Clone source repositories for other test cases here.
+# Scripts in `scripts/` will use this directory to locate the tests.
+repos/
+
 # Created by https://www.toptal.com/developers/gitignore/api/python
 # Edit at https://www.toptal.com/developers/gitignore?templates=python
 
