@@ -4,6 +4,7 @@ from tqdm import tqdm
 import json
 import re
 from datetime import datetime
+import ipaddress
 
 # This assumes you've cloned it to `repos/` locally. If you want, update to the absolute path of
 # your Spark clone. The directories here are e.g.
@@ -60,20 +61,47 @@ def clear_timestamps(doc):
     doc = json.loads(json.dumps(doc, default=dt_iso))
     return doc
 
-def create_test_case(query, df):
-    # Create mapping from DataFrame dtypes
+def is_ip_field(series):
+    # Check first non-null value if it's an IP address
+    sample = series.dropna().iloc[0] if not series.empty else None
+    if not isinstance(sample, str):
+        return False
+    try:
+        ipaddress.ip_address(sample)
+        return True
+    except ValueError:
+        return False
+
+def build_mapping(df):
     mapping = {}
     for column in df.columns:
         dtype = str(df[column].dtype)
-        # Map pandas dtypes to simplified types
         if 'int' in dtype:
             mapping[column] = 'integer'
         elif 'float' in dtype:
-            mapping[column] = 'float'
+            mapping[column] = 'double'
         elif 'bool' in dtype:
             mapping[column] = 'boolean'
+        elif 'datetime' in dtype:
+            mapping[column] = 'date'
+        elif 'object' in dtype or 'string' in dtype:
+            if is_ip_field(df[column]):
+                mapping[column] = 'ip'
+            else:
+                mapping[column] = 'text'
+        elif 'array' in dtype or 'list' in dtype:
+            # You might want to determine the array element type
+            mapping[column] = 'array'
+        elif 'dict' in dtype or 'struct' in dtype:
+            mapping[column] = 'object'
         else:
-            mapping[column] = 'keyword'
+            mapping[column] = 'text'
+            
+    return mapping
+
+
+def create_test_case(query, df):
+    mapping = build_mapping(df)
 
     # Convert DataFrame to list of dictionaries for documents
     documents = df.head(10).to_dict('records')
