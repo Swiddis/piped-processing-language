@@ -22,7 +22,12 @@ def load_indices():
 
 def load_ppl(path):
     with open(path, 'r') as fp:
-        return fp.read()
+        content = fp.read()
+    # Clear comments
+    content = re.sub(r'/\*[\s\S]*\*/', '', content)
+    content = ''.join(l for l in content.splitlines() if not l.startswith('//'))
+    content = content.strip()
+    return content
 
 def load_results(path):
     return pd.read_csv(path)
@@ -45,9 +50,15 @@ def get_dataset_name(query):
         raise ValueError(f"Query doesn't match expected format: {query}")
     return f"{match.group(1)}.parquet"
 
+def replace_dataset_name(query):
+    # Extract dataset name from query that starts with "source = dev.default."
+    query = re.sub(r'(source\s*=\s*)((dev\.default\.)?\w+)', r"\1$INDEX", query, flags=re.IGNORECASE)
+    return query
+
 def clear_timestamps(doc):
     dt_iso = lambda dt: dt.isoformat() if isinstance(dt, datetime) else dt
     doc = json.loads(json.dumps(doc, default=dt_iso))
+    return doc
 
 def create_test_case(query, df):
     # Create mapping from DataFrame dtypes
@@ -90,6 +101,7 @@ def generate_test_cases(indices, ppl, output_dir):
         try:
             # Get the dataset name from the query
             dataset_name = get_dataset_name(query)
+            query = replace_dataset_name(query)
             
             # Get the corresponding DataFrame
             if dataset_name not in indices:
